@@ -6,8 +6,6 @@
 //  Copyright 2011 Wedgekase Games, LLC. All rights reserved.
 //
 
-#import "cocos2d.h"
-
 @interface PopUp : CCSprite {
     CCSprite *window,*bg;
     CCNode *container;

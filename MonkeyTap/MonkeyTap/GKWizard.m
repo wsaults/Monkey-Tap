@@ -8,7 +8,6 @@
 
 #import "GKWizard.h"
 #import "Constants.h"
-#import "cocos2d.h"
 
 @implementation GKWizard
 

@@ -12,10 +12,26 @@
 #import "SimpleAudioEngine.h"
 #import "Constants.h"
 #import "PopUp.h"
-#import "GameButton.h"
 #import "CCMenuPopup.h"
 
 @implementation Game
+
+@synthesize state = _state;
+
++(CCScene *) scene
+{
+	// 'scene' is an autorelease object.
+	CCScene *scene = [CCScene node];
+	
+	// 'layer' is an autorelease object.
+	Game *layer = [Game node];
+	
+	// add layer as a child to scene
+	[scene addChild: layer];
+	
+	// return the scene
+	return scene;
+}
 
 - (id)init
 {

@@ -6,19 +6,37 @@
 //  Copyright 2011 Wedgekase Games, LLC. All rights reserved.
 //
 
-#import "cocos2d.h"
+#import "AppDelegate.h"
+#import "RootViewController.h"
+
+enum GameStatePP {
+    kGameStatePlaying,
+    kGameStatePaused
+};
 
 @class AppDelegate,Mole;
 
 @interface Game : CCScene <CCStandardTouchDelegate> {
+    
+    // Add inside @interface
+    RootViewController *viewController;
+    
+    enum GameStatePP _state;
+    
+    AppDelegate *delegate;
+    
     CCArray *moles;
     CCLabelBMFont *scoreLabel;
     int score;
     CGSize s;
     bool isPaused;
-    AppDelegate *delegate;
     CCMenuItemSprite *pauseButton;
 }
+
+@property(nonatomic) enum GameStatePP state;
+
+// returns a CCScene that contains the HelloWorldLayer as the only child
++(CCScene *) scene;
 
 -(void)didScore;
 -(void)pauseGame;

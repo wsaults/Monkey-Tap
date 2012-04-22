@@ -122,11 +122,16 @@
 		BE0232AC153F303600ED90BF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0232AB153F303600ED90BF /* AppDelegate.m */; };
 		BE0232AF153F303600ED90BF /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0232AE153F303600ED90BF /* RootViewController.m */; };
 		BE1C8C181544C07700E3A22B /* libFlurryAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1C8C171544C07700E3A22B /* libFlurryAnalytics.a */; };
+		BE1C8C1D1544C55300E3A22B /* logo-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1C8C1B1544C55300E3A22B /* logo-hd.png */; };
+		BE1C8C1E1544C55300E3A22B /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1C8C1C1544C55300E3A22B /* logo.png */; };
+		BE1C8C241544C56E00E3A22B /* button_big.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1C8C201544C56E00E3A22B /* button_big.png */; };
+		BE1C8C251544C56E00E3A22B /* button_big-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1C8C211544C56E00E3A22B /* button_big-hd.png */; };
+		BE1C8C261544C56E00E3A22B /* button_small.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1C8C221544C56E00E3A22B /* button_small.png */; };
+		BE1C8C271544C56E00E3A22B /* button_small-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1C8C231544C56E00E3A22B /* button_small-hd.png */; };
 		BEFCB9191544BDC3007D2E11 /* MainMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFCB9151544B9B0007D2E11 /* MainMenu.m */; };
 		BEFCB91A1544BE1E007D2E11 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFCB9111544B9A0007D2E11 /* Game.m */; };
 		BEFCB91B1544BE21007D2E11 /* CCSprite+DisableTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFCB90F1544B9A0007D2E11 /* CCSprite+DisableTouch.m */; };
 		BEFCB91C1544BE23007D2E11 /* GKWizard.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFCB90B1544B994007D2E11 /* GKWizard.m */; };
-		BEFCB91D1544BE26007D2E11 /* GameButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFCB9131544B9A0007D2E11 /* GameButton.m */; };
 		BEFCB91E1544BE2A007D2E11 /* PopUp.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFCB9171544B9B7007D2E11 /* PopUp.m */; };
 		BEFCB9201544BEC9007D2E11 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFCB91F1544BEC9007D2E11 /* Accelerate.framework */; };
 		BEFCB9221544BED0007D2E11 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFCB9211544BED0007D2E11 /* GameKit.framework */; };
@@ -378,6 +383,13 @@
 		BE0232B3153F303600ED90BF /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
 		BE1C8C161544C07700E3A22B /* FlurryAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryAnalytics.h; sourceTree = "<group>"; };
 		BE1C8C171544C07700E3A22B /* libFlurryAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurryAnalytics.a; sourceTree = "<group>"; };
+		BE1C8C1B1544C55300E3A22B /* logo-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-hd.png"; sourceTree = "<group>"; };
+		BE1C8C1C1544C55300E3A22B /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		BE1C8C1F1544C55B00E3A22B /* SF_Cartoonist_Hand_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SF_Cartoonist_Hand_Bold.ttf; sourceTree = "<group>"; };
+		BE1C8C201544C56E00E3A22B /* button_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_big.png; sourceTree = "<group>"; };
+		BE1C8C211544C56E00E3A22B /* button_big-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_big-hd.png"; sourceTree = "<group>"; };
+		BE1C8C221544C56E00E3A22B /* button_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_small.png; sourceTree = "<group>"; };
+		BE1C8C231544C56E00E3A22B /* button_small-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_small-hd.png"; sourceTree = "<group>"; };
 		BEFCB90A1544B994007D2E11 /* GKWizard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKWizard.h; sourceTree = "<group>"; };
 		BEFCB90B1544B994007D2E11 /* GKWizard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKWizard.m; sourceTree = "<group>"; };
 		BEFCB90C1544B9A0007D2E11 /* CCMenuPopup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCMenuPopup.h; sourceTree = "<group>"; };
@@ -386,8 +398,6 @@
 		BEFCB90F1544B9A0007D2E11 /* CCSprite+DisableTouch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CCSprite+DisableTouch.m"; sourceTree = "<group>"; };
 		BEFCB9101544B9A0007D2E11 /* Game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		BEFCB9111544B9A0007D2E11 /* Game.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
-		BEFCB9121544B9A0007D2E11 /* GameButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameButton.h; sourceTree = "<group>"; };
-		BEFCB9131544B9A0007D2E11 /* GameButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameButton.m; sourceTree = "<group>"; };
 		BEFCB9141544B9B0007D2E11 /* MainMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenu.h; sourceTree = "<group>"; };
 		BEFCB9151544B9B0007D2E11 /* MainMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenu.m; sourceTree = "<group>"; };
 		BEFCB9161544B9B7007D2E11 /* PopUp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopUp.h; sourceTree = "<group>"; };
@@ -497,8 +507,6 @@
 				BEFCB90F1544B9A0007D2E11 /* CCSprite+DisableTouch.m */,
 				BEFCB9101544B9A0007D2E11 /* Game.h */,
 				BEFCB9111544B9A0007D2E11 /* Game.m */,
-				BEFCB9121544B9A0007D2E11 /* GameButton.h */,
-				BEFCB9131544B9A0007D2E11 /* GameButton.m */,
 				BEFCB9141544B9B0007D2E11 /* MainMenu.h */,
 				BEFCB9151544B9B0007D2E11 /* MainMenu.m */,
 				BEFCB9161544B9B7007D2E11 /* PopUp.h */,
@@ -517,6 +525,8 @@
 		BE023159153F303400ED90BF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BE1C8C1F1544C55B00E3A22B /* SF_Cartoonist_Hand_Bold.ttf */,
+				BE1C8C1A1544C54A00E3A22B /* images */,
 				BE02315A153F303400ED90BF /* Default.png */,
 				BE02315C153F303400ED90BF /* fps_images.png */,
 				BE02315E153F303400ED90BF /* Icon-72.png */,
@@ -851,6 +861,19 @@
 			path = FlurryAnalytics;
 			sourceTree = "<group>";
 		};
+		BE1C8C1A1544C54A00E3A22B /* images */ = {
+			isa = PBXGroup;
+			children = (
+				BE1C8C201544C56E00E3A22B /* button_big.png */,
+				BE1C8C211544C56E00E3A22B /* button_big-hd.png */,
+				BE1C8C221544C56E00E3A22B /* button_small.png */,
+				BE1C8C231544C56E00E3A22B /* button_small-hd.png */,
+				BE1C8C1B1544C55300E3A22B /* logo-hd.png */,
+				BE1C8C1C1544C55300E3A22B /* logo.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -910,6 +933,12 @@
 				BE023167153F303400ED90BF /* Icon.png in Resources */,
 				BE023169153F303400ED90BF /* Icon@2x.png in Resources */,
 				BE02316C153F303400ED90BF /* iTunesArtwork in Resources */,
+				BE1C8C1D1544C55300E3A22B /* logo-hd.png in Resources */,
+				BE1C8C1E1544C55300E3A22B /* logo.png in Resources */,
+				BE1C8C241544C56E00E3A22B /* button_big.png in Resources */,
+				BE1C8C251544C56E00E3A22B /* button_big-hd.png in Resources */,
+				BE1C8C261544C56E00E3A22B /* button_small.png in Resources */,
+				BE1C8C271544C56E00E3A22B /* button_small-hd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1022,7 +1051,6 @@
 				BEFCB91A1544BE1E007D2E11 /* Game.m in Sources */,
 				BEFCB91B1544BE21007D2E11 /* CCSprite+DisableTouch.m in Sources */,
 				BEFCB91C1544BE23007D2E11 /* GKWizard.m in Sources */,
-				BEFCB91D1544BE26007D2E11 /* GameButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

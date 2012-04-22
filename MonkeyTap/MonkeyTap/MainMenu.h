@@ -6,15 +6,20 @@
 //  Copyright 2011 Wedgekase Games, LLC. All rights reserved.
 //
 
-#import "cocos2d.h"
+#import "CCScene.h"
 
 @class AppDelegate;
 
 @interface MainMenu : CCScene {
     AppDelegate *delegate;
-    
 }
 
--(void)playGame;
+- (void)intro;
+- (void)playGame;
+- (void)showFreeCoins;
+- (void)showLeaderboard;
+- (void)showAchievements;
+- (void) finish;
 
 @end
+
