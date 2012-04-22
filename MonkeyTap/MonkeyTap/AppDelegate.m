@@ -43,7 +43,7 @@
 
 - (void) applicationDidFinishLaunching:(UIApplication*)application
 {
-//    [FlurryAnalytics startSession:@"2I3SCJEBCZCE34CUM5SW"];
+    [FlurryAnalytics startSession:@"QD7EZYI76HY5T9Q48L9A"];
 	// Init the window
 	window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     timesPlayed = [[NSUserDefaults standardUserDefaults] integerForKey:kTimesPlayed];

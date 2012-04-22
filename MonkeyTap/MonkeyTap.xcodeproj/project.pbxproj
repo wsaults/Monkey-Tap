@@ -121,6 +121,7 @@
 		BE0232A9153F303600ED90BF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0232A8153F303600ED90BF /* main.m */; };
 		BE0232AC153F303600ED90BF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0232AB153F303600ED90BF /* AppDelegate.m */; };
 		BE0232AF153F303600ED90BF /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0232AE153F303600ED90BF /* RootViewController.m */; };
+		BE1C8C181544C07700E3A22B /* libFlurryAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1C8C171544C07700E3A22B /* libFlurryAnalytics.a */; };
 		BEFCB9191544BDC3007D2E11 /* MainMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFCB9151544B9B0007D2E11 /* MainMenu.m */; };
 		BEFCB91A1544BE1E007D2E11 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFCB9111544B9A0007D2E11 /* Game.m */; };
 		BEFCB91B1544BE21007D2E11 /* CCSprite+DisableTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFCB90F1544B9A0007D2E11 /* CCSprite+DisableTouch.m */; };
@@ -375,6 +376,8 @@
 		BE0232AD153F303600ED90BF /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		BE0232AE153F303600ED90BF /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		BE0232B3153F303600ED90BF /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
+		BE1C8C161544C07700E3A22B /* FlurryAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryAnalytics.h; sourceTree = "<group>"; };
+		BE1C8C171544C07700E3A22B /* libFlurryAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurryAnalytics.a; sourceTree = "<group>"; };
 		BEFCB90A1544B994007D2E11 /* GKWizard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKWizard.h; sourceTree = "<group>"; };
 		BEFCB90B1544B994007D2E11 /* GKWizard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKWizard.m; sourceTree = "<group>"; };
 		BEFCB90C1544B9A0007D2E11 /* CCMenuPopup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCMenuPopup.h; sourceTree = "<group>"; };
@@ -429,6 +432,7 @@
 				BE023153153F303400ED90BF /* UIKit.framework in Frameworks */,
 				BE023155153F303400ED90BF /* Foundation.framework in Frameworks */,
 				BE023157153F303400ED90BF /* CoreGraphics.framework in Frameworks */,
+				BE1C8C181544C07700E3A22B /* libFlurryAnalytics.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +442,7 @@
 		BE023139153F303400ED90BF = {
 			isa = PBXGroup;
 			children = (
+				BE1C8C151544C07700E3A22B /* FlurryAnalytics */,
 				BE023158153F303400ED90BF /* MonkeyTap */,
 				BE023147153F303400ED90BF /* Frameworks */,
 				BE023145153F303400ED90BF /* Products */,
@@ -837,6 +842,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		BE1C8C151544C07700E3A22B /* FlurryAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				BE1C8C161544C07700E3A22B /* FlurryAnalytics.h */,
+				BE1C8C171544C07700E3A22B /* libFlurryAnalytics.a */,
+			);
+			path = FlurryAnalytics;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1063,6 +1077,10 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = MonkeyTap/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/FlurryAnalytics\"",
+				);
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-all_load",
@@ -1084,6 +1102,10 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = MonkeyTap/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/FlurryAnalytics\"",
+				);
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-all_load",

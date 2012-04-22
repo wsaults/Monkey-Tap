@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FlurryAnalytics.h"
+#import "GKWizard.h"
 
 @class RootViewController;
 
