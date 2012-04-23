@@ -58,20 +58,29 @@
     objects = [[CCArray alloc] init];
     
     float hPad = 20;
-    float vPad = 25;
+    float vPad = 35;
     
-    for (int i = 1; i <= 4; i++) {
+    for (int i = 1; i <= 6; i++) {
         for (int j = 1; j <= 4; j++) {
             GameObjects *m = [GameObjects spriteWithFile:@"BallWhite.png"];
-            m.position = ccp(j * m.contentSize.width + hPad, i * m.contentSize.height + vPad);
+            m.position = ccp(j * (m.contentSize.width + 3) + hPad, i * (m.contentSize.height + 3)+ vPad);
             [objects addObject:m];
             [self addChild:m z:1];
         }
     }
     
+    
+    // Set the BG
+    [CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGB565];
+    CCSprite *bg = [CCSprite spriteWithFile:[NSString stringWithFormat:@"bg.png"]];
+//    CCSprite *bg = [CCSprite spriteWithFile:[NSString stringWithFormat:@"%@_bg.png", [delegate getCurrentSkin]]];
+    bg.anchorPoint = ccp(0,0);
+    [self addChild:bg z:-1];
+    [CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA4444];
+    
     // Create the score label in the top left of the screen
     fSize = 18;
-    scoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Coins: 0"] 
+    scoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Coins:0"] 
                                     fontName:@"SF_Cartoonist_Hand_Bold.ttf" 
                                     fontSize:fSize];
     
@@ -150,9 +159,15 @@
     return upObjects;
 }
 
--(int)getObjectsUp {
-    
-    return 0;
+-(int)getObjectsUp 
+{
+    int upObjects = 0;
+    for (GameObjects *object in objects) {
+        if ([object getIsUp]) {
+            upObjects++;
+        }
+    }
+    return upObjects;
 }
 -(void)missedObject {
     
@@ -173,12 +188,39 @@
     if (isPaused) {
         return;
     }
+    NSMutableArray *objectsTappedAtOnce = [[NSMutableArray alloc] init];
+    for (UITouch *touch in [event allTouches]) {
+        for (GameObjects *object in objects) {
+            CGPoint location = [touch locationInView:touch.view];
+            location = [[CCDirector sharedDirector] convertToGL:location];
+            if (CGRectContainsPoint([object boundingBox], location)) {
+                if (![object getIsUp] || [objectsTappedAtOnce containsObject:object]) {
+                    continue;
+                }
+                
+                bool monkeyWasWhacked = ([[object getType] isEqualToString:OBJECT_TYPE_A]);
+                if (monkeyWasWhacked) {
+                    [object wasTapped];
+                    [self didScore];
+                    // Play a sound here... eg. splat!
+                }
+            }
+        }
+    }
+    if ([objectsTappedAtOnce count] > 1) {
+        for (GameObjects *object in objectsTappedAtOnce) {
+            [object wasTapped];
+            [self didScore];
+        }
+        // Play a sound here... eg. splat!
+    }
+    [objectsTappedAtOnce removeAllObjects];
 }
 
 -(void)didScore
 {
     score++;
-    [scoreLabel setString:[NSString stringWithFormat:@"score:%i",score]];
+    [scoreLabel setString:[NSString stringWithFormat:@"Coins:%i",score]];
 }
 
 -(void)gameOver

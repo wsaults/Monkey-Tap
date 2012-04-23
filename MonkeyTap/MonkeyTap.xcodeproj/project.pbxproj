@@ -134,6 +134,8 @@
 		BE1C8C2F1544CAF900E3A22B /* SF_Cartoonist_Hand_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE1C8C1F1544C55B00E3A22B /* SF_Cartoonist_Hand_Bold.ttf */; };
 		BE1C8C321544E8CB00E3A22B /* BallWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1C8C301544E8CB00E3A22B /* BallWhite.png */; };
 		BE1C8C331544E8CB00E3A22B /* BallWhite-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1C8C311544E8CB00E3A22B /* BallWhite-hd.png */; };
+		BEB6CE9015459C5F0032097E /* bg-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = BEB6CE8E15459C5F0032097E /* bg-hd.png */; };
+		BEB6CE9115459C5F0032097E /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BEB6CE8F15459C5F0032097E /* bg.png */; };
 		BEFCB9191544BDC3007D2E11 /* MainMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFCB9151544B9B0007D2E11 /* MainMenu.m */; };
 		BEFCB91A1544BE1E007D2E11 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFCB9111544B9A0007D2E11 /* Game.m */; };
 		BEFCB91B1544BE21007D2E11 /* CCSprite+DisableTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFCB90F1544B9A0007D2E11 /* CCSprite+DisableTouch.m */; };
@@ -402,6 +404,8 @@
 		BE1C8C2D1544C75800E3A22B /* GameObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameObjects.m; sourceTree = "<group>"; };
 		BE1C8C301544E8CB00E3A22B /* BallWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BallWhite.png; sourceTree = "<group>"; };
 		BE1C8C311544E8CB00E3A22B /* BallWhite-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BallWhite-hd.png"; sourceTree = "<group>"; };
+		BEB6CE8E15459C5F0032097E /* bg-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-hd.png"; sourceTree = "<group>"; };
+		BEB6CE8F15459C5F0032097E /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 		BEFCB90A1544B994007D2E11 /* GKWizard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKWizard.h; sourceTree = "<group>"; };
 		BEFCB90B1544B994007D2E11 /* GKWizard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKWizard.m; sourceTree = "<group>"; };
 		BEFCB90C1544B9A0007D2E11 /* CCMenuPopup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCMenuPopup.h; sourceTree = "<group>"; };
@@ -878,6 +882,8 @@
 		BE1C8C1A1544C54A00E3A22B /* images */ = {
 			isa = PBXGroup;
 			children = (
+				BEB6CE8E15459C5F0032097E /* bg-hd.png */,
+				BEB6CE8F15459C5F0032097E /* bg.png */,
 				BE1C8C281544C66C00E3A22B /* Ball.png */,
 				BE1C8C291544C66C00E3A22B /* Ball-hd.png */,
 				BE1C8C301544E8CB00E3A22B /* BallWhite.png */,
@@ -962,6 +968,8 @@
 				BE1C8C2F1544CAF900E3A22B /* SF_Cartoonist_Hand_Bold.ttf in Resources */,
 				BE1C8C321544E8CB00E3A22B /* BallWhite.png in Resources */,
 				BE1C8C331544E8CB00E3A22B /* BallWhite-hd.png in Resources */,
+				BEB6CE9015459C5F0032097E /* bg-hd.png in Resources */,
+				BEB6CE9115459C5F0032097E /* bg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -43,10 +43,12 @@
     
     didMiss = YES;
     type = t;
-    self.scaleX = (CCRANDOM_0_1() >= .5) ? 1 : -1;
+
     
+    // These two lines creates the sprite
     CCSprite *sprite = [CCSprite spriteWithFile:@"Ball.png"];
-    [self addChild:sprite];
+    sprite.anchorPoint = ccp(0,0);
+    [self addChild:sprite z:1 tag:6];
     
 //    [self runAction:[CCAnimate actionWithAnimation:[self getAnimationWithFrames:1 to:10] restoreOriginalFrame:NO]];
 //    [self runAction:[CCSequence actions:
@@ -74,7 +76,7 @@
 
 -(void)stop
 {
-    
+
 }
 
 -(BOOL)getIsUp
@@ -86,7 +88,8 @@
 {
     if (isUp) {
         [self stopAllActions];
-        
+        // The following line removes the sprite when tapped.
+        [self removeChildByTag:6 cleanup:YES];
         isUp = NO;
     }
 }
