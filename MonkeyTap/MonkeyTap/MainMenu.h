@@ -19,7 +19,7 @@
 - (void)showFreeCoins;
 - (void)showLeaderboard;
 - (void)showAchievements;
-- (void) finish;
+- (void)finish;
 
 @end
 

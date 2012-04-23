@@ -37,6 +37,13 @@
 {
     self = [super init];
     if (self) {
+        
+        objectsAtOnce = 3;
+        timeBetweenObjects = 0.5f;
+        increaseObjectsAtTime = 10.f;
+        
+        // Add at end of init
+        self.state = kGameStatePlaying;
     }
     
     return self;
@@ -44,8 +51,35 @@
 
 -(void)initializeGame
 {
+    delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [[CCDirector sharedDirector] resume];
+    s = [[CCDirector sharedDirector] winSize];
     
-        [self startGame];
+    objects = [[CCArray alloc] init];
+    
+    float hPad = 20;
+    float vPad = 25;
+    
+    for (int i = 1; i <= 4; i++) {
+        for (int j = 1; j <= 4; j++) {
+            GameObjects *m = [GameObjects spriteWithFile:@"BallWhite.png"];
+            m.position = ccp(j * m.contentSize.width + hPad, i * m.contentSize.height + vPad);
+            [objects addObject:m];
+            [self addChild:m z:1];
+        }
+    }
+    
+    // Create the score label in the top left of the screen
+    fSize = 18;
+    scoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Coins: 0"] 
+                                    fontName:@"SF_Cartoonist_Hand_Bold.ttf" 
+                                    fontSize:fSize];
+    
+    scoreLabel.anchorPoint = ccp(0,1);
+    scoreLabel.position = ccp(1,s.height);
+    [self addChild:scoreLabel];
+    
+    [self startGame];
 }
 
 -(void)startGame
@@ -53,9 +87,84 @@
     [self schedule:@selector(tick:)];
 }
 
+-(void)chooseWhichObjectToMake
+{
+    if ([self getObjectsUp] >= objectsAtOnce) {
+        return;
+    }
+    nextObjectType = @"a";
+    
+    [self showObject];
+}
+
 -(void)tick: (ccTime)dt
 {
+    if (!isPaused) {
+        // Time remaing = 60 seconds - totalTime
+        
+        timeElapsed += dt;
+        increaseElapsed += dt;
+        if(timeElapsed >= timeBetweenObjects)
+        {
+            [self chooseWhichObjectToMake];
+            timeElapsed = 0;
+        }
+        if (increaseElapsed >= increaseObjectsAtTime) {
+            int maxObjectsAtOnce = 18;
+            if (objectsAtOnce < maxObjectsAtOnce) {
+                objectsAtOnce++;
+                float minObjectTime = .1f;
+                timeBetweenObjects -= (timeBetweenObjects > minObjectTime) ? 0.05f : 0;
+                increaseObjectsAtTime += 10.0f;
+            }
+        }
+    }
     
+}
+
+-(void)showObject
+{
+    GameObjects *object = [[CCArray arrayWithNSArray:[self getDownObjects]] randomObject];
+    [object startWithType:nextObjectType];
+}
+
+-(NSArray *)getDownObjects
+{
+    NSMutableArray *downObjects = [[NSMutableArray alloc] init];
+    for (GameObjects *m in objects) {
+        if (![m getIsUp]) {
+            [downObjects addObject:m];
+        }
+    }
+    return downObjects;
+}
+
+-(NSArray *)getUpObjects
+{
+    NSMutableArray *upObjects = [[NSMutableArray alloc] init];
+    for (GameObjects *m in objects) {
+        if ([m getIsUp]) {
+            [upObjects addObject:m];
+        }
+    }
+    return upObjects;
+}
+
+-(int)getObjectsUp {
+    
+    return 0;
+}
+-(void)missedObject {
+    
+    // What do you want to do when the object vanishes?
+    
+    // Play sound
+    
+    // Deduct points?
+    
+    for (GameObjects *m in [self getUpObjects]) {
+        [m stopEarly];
+    }
 }
 
 
@@ -74,7 +183,24 @@
 
 -(void)gameOver
 {
+    // If time reaches 0 then gameOver
     
+    for (GameObjects *m in objects) {
+        [m stopAllActions];
+        [m unscheduleAllSelectors];
+    }
+    
+    [delegate finishedWithScore:score];
+    [self unscheduleAllSelectors];
+    
+    // Play a sound
+    
+//    CCMenuItemSprite *playAgainButton = [CCMenuItemSprite itemFromNormalSprite:[GameButton buttonWithText:@"play again"] selectedSprite:NULL target:self selector:@selector(playAgain)];
+//    CCMenuItemSprite *mainButton = [CCMenuItemSprite itemFromNormalSprite:[GameButton buttonWithText:@"main menu"] selectedSprite:NULL target:self selector:@selector(mainMenu)];
+//    CCMenuPopup *menu = [CCMenuPopup menuWithItems:playAgainButton,mainButton, nil];
+//    [menu alignItemsHorizontallyWithPadding:10];
+//    PopUp *pop = [PopUp popUpWithTitle:@"-game over-" description:@"" sprite:menu];
+//    [self addChild:pop z:1000];
 }
 
 
@@ -115,7 +241,7 @@
 
 -(void)onExit
 {
-
+    [objects release];
 }
 
 - (void)dealloc

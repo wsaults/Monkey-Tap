@@ -128,6 +128,12 @@
 		BE1C8C251544C56E00E3A22B /* button_big-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1C8C211544C56E00E3A22B /* button_big-hd.png */; };
 		BE1C8C261544C56E00E3A22B /* button_small.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1C8C221544C56E00E3A22B /* button_small.png */; };
 		BE1C8C271544C56E00E3A22B /* button_small-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1C8C231544C56E00E3A22B /* button_small-hd.png */; };
+		BE1C8C2A1544C66C00E3A22B /* Ball.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1C8C281544C66C00E3A22B /* Ball.png */; };
+		BE1C8C2B1544C66C00E3A22B /* Ball-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1C8C291544C66C00E3A22B /* Ball-hd.png */; };
+		BE1C8C2E1544C75900E3A22B /* GameObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1C8C2D1544C75800E3A22B /* GameObjects.m */; };
+		BE1C8C2F1544CAF900E3A22B /* SF_Cartoonist_Hand_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE1C8C1F1544C55B00E3A22B /* SF_Cartoonist_Hand_Bold.ttf */; };
+		BE1C8C321544E8CB00E3A22B /* BallWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1C8C301544E8CB00E3A22B /* BallWhite.png */; };
+		BE1C8C331544E8CB00E3A22B /* BallWhite-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1C8C311544E8CB00E3A22B /* BallWhite-hd.png */; };
 		BEFCB9191544BDC3007D2E11 /* MainMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFCB9151544B9B0007D2E11 /* MainMenu.m */; };
 		BEFCB91A1544BE1E007D2E11 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFCB9111544B9A0007D2E11 /* Game.m */; };
 		BEFCB91B1544BE21007D2E11 /* CCSprite+DisableTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFCB90F1544B9A0007D2E11 /* CCSprite+DisableTouch.m */; };
@@ -390,6 +396,12 @@
 		BE1C8C211544C56E00E3A22B /* button_big-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_big-hd.png"; sourceTree = "<group>"; };
 		BE1C8C221544C56E00E3A22B /* button_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_small.png; sourceTree = "<group>"; };
 		BE1C8C231544C56E00E3A22B /* button_small-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_small-hd.png"; sourceTree = "<group>"; };
+		BE1C8C281544C66C00E3A22B /* Ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ball.png; sourceTree = "<group>"; };
+		BE1C8C291544C66C00E3A22B /* Ball-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ball-hd.png"; sourceTree = "<group>"; };
+		BE1C8C2C1544C75800E3A22B /* GameObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObjects.h; sourceTree = "<group>"; };
+		BE1C8C2D1544C75800E3A22B /* GameObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameObjects.m; sourceTree = "<group>"; };
+		BE1C8C301544E8CB00E3A22B /* BallWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BallWhite.png; sourceTree = "<group>"; };
+		BE1C8C311544E8CB00E3A22B /* BallWhite-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BallWhite-hd.png"; sourceTree = "<group>"; };
 		BEFCB90A1544B994007D2E11 /* GKWizard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKWizard.h; sourceTree = "<group>"; };
 		BEFCB90B1544B994007D2E11 /* GKWizard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKWizard.m; sourceTree = "<group>"; };
 		BEFCB90C1544B9A0007D2E11 /* CCMenuPopup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCMenuPopup.h; sourceTree = "<group>"; };
@@ -515,6 +527,8 @@
 				BE0232AE153F303600ED90BF /* RootViewController.m */,
 				BE0232B3153F303600ED90BF /* GameConfig.h */,
 				BEFCB9181544B9C1007D2E11 /* Constants.h */,
+				BE1C8C2C1544C75800E3A22B /* GameObjects.h */,
+				BE1C8C2D1544C75800E3A22B /* GameObjects.m */,
 				BE023159153F303400ED90BF /* Resources */,
 				BE02316D153F303400ED90BF /* libs */,
 				BE0232A6153F303600ED90BF /* Supporting Files */,
@@ -864,6 +878,10 @@
 		BE1C8C1A1544C54A00E3A22B /* images */ = {
 			isa = PBXGroup;
 			children = (
+				BE1C8C281544C66C00E3A22B /* Ball.png */,
+				BE1C8C291544C66C00E3A22B /* Ball-hd.png */,
+				BE1C8C301544E8CB00E3A22B /* BallWhite.png */,
+				BE1C8C311544E8CB00E3A22B /* BallWhite-hd.png */,
 				BE1C8C201544C56E00E3A22B /* button_big.png */,
 				BE1C8C211544C56E00E3A22B /* button_big-hd.png */,
 				BE1C8C221544C56E00E3A22B /* button_small.png */,
@@ -939,6 +957,11 @@
 				BE1C8C251544C56E00E3A22B /* button_big-hd.png in Resources */,
 				BE1C8C261544C56E00E3A22B /* button_small.png in Resources */,
 				BE1C8C271544C56E00E3A22B /* button_small-hd.png in Resources */,
+				BE1C8C2A1544C66C00E3A22B /* Ball.png in Resources */,
+				BE1C8C2B1544C66C00E3A22B /* Ball-hd.png in Resources */,
+				BE1C8C2F1544CAF900E3A22B /* SF_Cartoonist_Hand_Bold.ttf in Resources */,
+				BE1C8C321544E8CB00E3A22B /* BallWhite.png in Resources */,
+				BE1C8C331544E8CB00E3A22B /* BallWhite-hd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1051,6 +1074,7 @@
 				BEFCB91A1544BE1E007D2E11 /* Game.m in Sources */,
 				BEFCB91B1544BE21007D2E11 /* CCSprite+DisableTouch.m in Sources */,
 				BEFCB91C1544BE23007D2E11 /* GKWizard.m in Sources */,
+				BE1C8C2E1544C75900E3A22B /* GameObjects.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

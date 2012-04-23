@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "RootViewController.h"
+#import "GameObjects.h"
 
 enum GameStatePP {
     kGameStatePlaying,
@@ -25,11 +26,15 @@ enum GameStatePP {
     
     AppDelegate *delegate;
     
-    CCArray *moles;
+    CCArray *objects;
     CCLabelBMFont *scoreLabel;
-    int score;
+    
+    int score, numberOfObjects, maxNumberOfObjects, fSize, objectsAtOnce;
+    float timeBetweenObjects, timeElapsed, increaseObjectsAtTime, increaseElapsed, lastObjectHitTime, totalTime;
     CGSize s;
     bool isPaused;
+    NSString *nextObjectType;
+    
     CCMenuItemSprite *pauseButton;
 }
 
@@ -46,5 +51,12 @@ enum GameStatePP {
 -(void)mainMenu;
 -(void)playAgain;
 -(void)gameOver;
+
+-(void)showObject;
+-(int)getObjectsUp;
+-(void)missedObject;
+-(NSArray *)getUpObjects;
+-(NSArray *)getDownObjects;
+-(void)chooseWhichObjectToMake;
 
 @end
