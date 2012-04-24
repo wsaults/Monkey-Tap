@@ -29,7 +29,7 @@ enum GameStatePP {
     CCArray *objects;
     CCLabelBMFont *scoreLabel;
     
-    int score, numberOfObjects, maxNumberOfObjects, fSize, objectsAtOnce;
+    int count, score, numberOfObjects, maxNumberOfObjects, fSize, objectsAtOnce;
     float timeBetweenObjects, timeElapsed, increaseObjectsAtTime, increaseElapsed, lastObjectHitTime, totalTime;
     CGSize s;
     bool isPaused;

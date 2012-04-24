@@ -108,7 +108,7 @@
     if ([self getObjectsUp] >= objectsAtOnce) {
         return;
     }
-    nextObjectType = @"a";
+    nextObjectType = @"monkey";
     
     [self showObject];
 }
@@ -182,7 +182,8 @@
     
     // Play sound
     
-    // Deduct points?
+    count = 0;
+    // Set multiplyer image to X1
     
     for (GameObjects *object in [self getUpObjects]) {
         [object stopEarly];
@@ -207,7 +208,7 @@
                 
                 bool monkeyWasWhacked = ([[object getType] isEqualToString:OBJECT_TYPE_A]);
                 if (monkeyWasWhacked) {
-                    [object wasTapped];
+                    [object wasTapped:count];
                     [self didScore];
                     // Play a sound here... eg. splat!
                 }
@@ -216,7 +217,7 @@
     }
     if ([objectsTappedAtOnce count] > 1) {
         for (GameObjects *object in objectsTappedAtOnce) {
-            [object wasTapped];
+            [object wasTapped:count];
             [self didScore];
         }
         // Play a sound here... eg. splat!
@@ -226,7 +227,36 @@
 
 -(void)didScore
 {
-    score++;
+    count++;
+//    CCLOG(@"Count: %d", count);
+    if (count <= 29) {
+        // Set multiplyer image to X1
+        score+=10;
+    } else if (count >= 30 && count <= 59) {
+        // Set multiplyer image to X2
+        score+=20;
+    } else if (count >= 60 && count <= 89) {
+        // Set multiplyer image to X3
+        score+=30;
+    } else if (count >= 90 && count <= 119) {
+        // Set multiplyer image to X4
+        score+=40;
+    } else if (count >= 120 && count <= 149) {
+        // Set multiplyer image to X5
+        score+=50;
+    } else if (count >= 150) {
+        // Set multiplyer image to X6
+        score+=60;
+    }
+    
+    // score % 30 = number of units to fill multiplier bar.
+    /* if (score >= 150) {
+     *      score bar stays full
+     * } else {
+     *      score bar is full number of units = score % 30
+     * }
+     */
+    
     [scoreLabel setString:[NSString stringWithFormat:@"Coins:%i",score]];
 }
 

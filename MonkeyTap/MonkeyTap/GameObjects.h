@@ -7,6 +7,7 @@
 //
 
 #import "CCSprite.h"
+#import "Game.h"
 
 @class AppDelegate;
 
@@ -17,7 +18,7 @@
     AppDelegate *delegate;
 }
 
--(void)wasTapped;
+-(void)wasTapped:(int)c;
 -(BOOL)getIsUp;
 -(CCAnimation *)getAnimationWithFrames: (int)from to:(int)to;
 -(CCAnimation *)reverseAnimationWithFrames: (int)from to:(int)to;

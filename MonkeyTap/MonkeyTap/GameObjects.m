@@ -73,7 +73,7 @@
 //    sprite.anchorPoint = ccp(0,0);
 //    [self addChild:sprite z:1 tag:6];
     
-    [self runAction:[CCAnimate actionWithAnimation:[self getAnimationWithFrames:1 to:10] restoreOriginalFrame:NO]];
+    [self runAction:[CCAnimate actionWithAnimation:[self getAnimationWithFrames:0 to:10] restoreOriginalFrame:NO]];
     [self runAction:[CCSequence actions:
                      [CCDelayTime actionWithDuration:instanceUpTime],
                      [CCCallFunc actionWithTarget:self selector:@selector(stop)],
@@ -85,7 +85,7 @@
     isUp = NO;
     
     if (didMiss) {
-        [self removeChildByTag:6 cleanup:YES];
+//        [self removeChildByTag:6 cleanup:YES];
         [(Game *)self.parent missedObject];
     }
     
@@ -105,7 +105,7 @@
 {
     // The following line removes the sprite when missed.
     [self runAction:[CCSequence actions:
-                     [CCAnimate actionWithAnimation:[self reverseAnimationWithFrames:10 to:1] restoreOriginalFrame:NO],
+                     [CCAnimate actionWithAnimation:[self reverseAnimationWithFrames:10 to:0] restoreOriginalFrame:NO],
                      [CCCallFunc actionWithTarget:self selector:@selector(reset)],
                      nil]];
 }
@@ -115,12 +115,33 @@
     return isUp;
 }
 
--(void)wasTapped
+-(void)wasTapped:(int)c
 {
     if (isUp) {
         [self stopAllActions];
-//        [self runAction:[CCAnimate actionWithAnimation:[self getAnimationWithFrames:11 to:21] restoreOriginalFrame:NO]];
-        [self runAction:[CCAnimate actionWithAnimation:[self reverseAnimationWithFrames:10 to:1] restoreOriginalFrame:NO]];
+        
+        if (c <= 29) {
+            // Set multiplyer image to +10
+            [self runAction:[CCAnimate actionWithAnimation:[self getAnimationWithFrames:11 to:21] restoreOriginalFrame:NO]];
+        } else if (c >= 30 && c <= 59) {
+            // Set multiplyer image to +20
+            [self runAction:[CCAnimate actionWithAnimation:[self getAnimationWithFrames:22 to:32] restoreOriginalFrame:NO]];
+        } else if (c >= 60 && c <= 89) {
+            // Set multiplyer image to +30
+            [self runAction:[CCAnimate actionWithAnimation:[self getAnimationWithFrames:33 to:43] restoreOriginalFrame:NO]];
+        } else if (c >= 90 && c <= 119) {
+            // Set multiplyer image to +40
+            [self runAction:[CCAnimate actionWithAnimation:[self getAnimationWithFrames:44 to:54] restoreOriginalFrame:NO]];
+        } else if (c >= 120 && c <= 149) {
+            // Set multiplyer image to +50
+            [self runAction:[CCAnimate actionWithAnimation:[self getAnimationWithFrames:55 to:65] restoreOriginalFrame:NO]];
+        } else if (c >= 150) {
+            // Set multiplyer image to +60
+            [self runAction:[CCAnimate actionWithAnimation:[self getAnimationWithFrames:66 to:76] restoreOriginalFrame:NO]];
+        }
+        
+        
+//        [self runAction:[CCAnimate actionWithAnimation:[self reverseAnimationWithFrames:10 to:0] restoreOriginalFrame:NO]];
         // The following line removes the sprite when tapped.
 //        [self removeChildByTag:6 cleanup:YES];
         isUp = NO;
