@@ -1,9 +1,9 @@
 //
 //  Game.m
-//  Mole It
+//  MonkeyTap
 //
-//  Created by Todd Perkins on 4/25/11.
-//  Copyright 2011 Wedgekase Games, LLC. All rights reserved.
+//  Created by William Saults on 4/18/12.
+//  Copyright UTVCA 2012. All rights reserved.
 //
 
 #import "Game.h"
@@ -88,7 +88,7 @@
     // Create the score label in the top left of the screen
     fSize = 18;
     scoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Coins:0"] 
-                                    fontName:@"SF_Cartoonist_Hand_Bold.ttf" 
+                                    fontName:@"CPMono_v07_Bold.otf" 
                                     fontSize:fSize];
     
     scoreLabel.anchorPoint = ccp(0,1);

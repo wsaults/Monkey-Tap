@@ -1,9 +1,9 @@
 //
 //  MainMenu.m
-//  catnmouse
+//  MonkeyTap
 //
-//  Created by William Saults on 3/23/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Created by William Saults on 4/18/12.
+//  Copyright UTVCA 2012. All rights reserved.
 //
 
 #import "MainMenu.h"
@@ -27,7 +27,10 @@
         
         // Create the HighScore label in the top left corner
         int fSize = 18;
-        CCLabelTTF *highScore = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Coins: %d", [delegate getHighScore]] fontName:@"SF_Cartoonist_Hand_Bold.ttf" fontSize:fSize];
+        CCLabelTTF *highScore = [CCLabelTTF 
+                                 labelWithString:[NSString stringWithFormat:@"Coins: %d", [delegate getHighScore]] 
+                                 fontName:@"CPMono_v07_Bold.otf" 
+                                 fontSize:fSize];
         highScore.anchorPoint = ccp(0,1);
         highScore.position = ccp(1,s.height);
         [self addChild:highScore];

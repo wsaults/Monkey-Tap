@@ -1,9 +1,9 @@
 //
 //  PopUp.h
-//  Mole It
+//  MonkeyTap
 //
-//  Created by Todd Perkins on 7/29/11.
-//  Copyright 2011 Wedgekase Games, LLC. All rights reserved.
+//  Created by William Saults on 4/18/12.
+//  Copyright UTVCA 2012. All rights reserved.
 //
 
 @interface PopUp : CCSprite {
