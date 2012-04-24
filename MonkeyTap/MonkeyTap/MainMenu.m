@@ -85,7 +85,12 @@
         menu.position = ccp(s.width/2, 20);
         [self addChild:menu];
         
-        // Add BG
+        // BG
+        [CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGB565];
+        CCSprite *bg = [CCSprite spriteWithFile:@"monkey_bg.png"];
+        bg.anchorPoint = ccp(0,0);
+        [self addChild:bg z:-1];
+        [CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA4444];
         
     }
     return self;

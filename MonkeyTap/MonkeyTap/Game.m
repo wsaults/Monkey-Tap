@@ -38,7 +38,7 @@
     self = [super init];
     if (self) {
         
-        objectsAtOnce = 3;
+        objectsAtOnce = 4;
         timeBetweenObjects = 0.5f;
         increaseObjectsAtTime = 10.f;
         
@@ -55,15 +55,22 @@
     [[CCDirector sharedDirector] resume];
     s = [[CCDirector sharedDirector] winSize];
     
+    // Add sounds here:
+    
+    NSString *fileName = [NSString stringWithFormat:@"%@.plist", [delegate getCurrentSkin]];
+    
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:fileName];
+
+    
     objects = [[CCArray alloc] init];
     
-    float hPad = 20;
-    float vPad = 35;
+    float hPad = 0;
+    float vPad = 40;
     
-    for (int i = 1; i <= 6; i++) {
+    for (int i = 1; i <= 5; i++) {
         for (int j = 1; j <= 4; j++) {
             GameObjects *m = [GameObjects spriteWithFile:@"BallWhite.png"];
-            m.position = ccp(j * (m.contentSize.width + 3) + hPad, i * (m.contentSize.height + 3)+ vPad);
+            m.position = ccp(j * (m.contentSize.width + 5) + hPad, i * (m.contentSize.height + 10)+ vPad);
             [objects addObject:m];
             [self addChild:m z:1];
         }
@@ -177,8 +184,8 @@
     
     // Deduct points?
     
-    for (GameObjects *m in [self getUpObjects]) {
-        [m stopEarly];
+    for (GameObjects *object in [self getUpObjects]) {
+        [object stopEarly];
     }
 }
 
@@ -284,6 +291,8 @@
 -(void)onExit
 {
     [objects release];
+    // Unload sounds here
+    [[CCTouchDispatcher sharedDispatcher] removeAllDelegates];
 }
 
 - (void)dealloc

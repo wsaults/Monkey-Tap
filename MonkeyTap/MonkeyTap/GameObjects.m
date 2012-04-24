@@ -26,6 +26,29 @@
     return self;
 }
 
+-(CCAnimation *)getAnimationWithFrames: (int)from to:(int)to
+{
+    NSMutableArray *anim = [[NSMutableArray alloc] init];
+    for (int i = from; i <= to; i++) {
+        NSString *frame = [NSString stringWithFormat:@"%@_%i.png",type, i];
+        [anim addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:frame]];
+    }
+    CCAnimation *a = [CCAnimation animationWithFrames:anim delay:1.0f/24.0f];
+    return a;
+}
+
+-(CCAnimation *)reverseAnimationWithFrames: (int)from to:(int)to
+{
+    NSMutableArray *anim = [[NSMutableArray alloc] init];
+    for (int i = from; i >= to; i--) {
+        NSString *frame = [NSString stringWithFormat:@"%@_%i.png",type, i];
+        [anim addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:frame]];
+    }
+    CCAnimation *a = [CCAnimation animationWithFrames:anim delay:1.0f/24.0f];
+    return a;
+}
+
+
 -(void)startWithType: (NSString *)t
 {
     [self stopAllActions];
@@ -45,16 +68,16 @@
     type = t;
 
     
-    // These two lines creates the sprite
-    CCSprite *sprite = [CCSprite spriteWithFile:@"Ball.png"];
-    sprite.anchorPoint = ccp(0,0);
-    [self addChild:sprite z:1 tag:6];
+    // These three lines creates the sprite
+//    CCSprite *sprite = [CCSprite spriteWithFile:@"monkey.png"];
+//    sprite.anchorPoint = ccp(0,0);
+//    [self addChild:sprite z:1 tag:6];
     
-//    [self runAction:[CCAnimate actionWithAnimation:[self getAnimationWithFrames:1 to:10] restoreOriginalFrame:NO]];
-//    [self runAction:[CCSequence actions:
-//                     [CCDelayTime actionWithDuration:instanceUpTime],
-//                     [CCCallFunc actionWithTarget:self selector:@selector(stop)],
-//                     nil]];
+    [self runAction:[CCAnimate actionWithAnimation:[self getAnimationWithFrames:1 to:10] restoreOriginalFrame:NO]];
+    [self runAction:[CCSequence actions:
+                     [CCDelayTime actionWithDuration:instanceUpTime],
+                     [CCCallFunc actionWithTarget:self selector:@selector(stop)],
+                     nil]];
 }
 
 -(void)reset
@@ -62,6 +85,7 @@
     isUp = NO;
     
     if (didMiss) {
+        [self removeChildByTag:6 cleanup:YES];
         [(Game *)self.parent missedObject];
     }
     
@@ -70,13 +94,20 @@
 -(void)stopEarly
 {
     didMiss = NO;
+    
+    // Uncomment the following line to remove all sprites when one is missed.
+//    [self removeAllChildrenWithCleanup:YES];
     [self stopAllActions];
     [self stop];
 }
 
 -(void)stop
 {
-
+    // The following line removes the sprite when missed.
+    [self runAction:[CCSequence actions:
+                     [CCAnimate actionWithAnimation:[self reverseAnimationWithFrames:10 to:1] restoreOriginalFrame:NO],
+                     [CCCallFunc actionWithTarget:self selector:@selector(reset)],
+                     nil]];
 }
 
 -(BOOL)getIsUp
@@ -88,8 +119,10 @@
 {
     if (isUp) {
         [self stopAllActions];
+//        [self runAction:[CCAnimate actionWithAnimation:[self getAnimationWithFrames:11 to:21] restoreOriginalFrame:NO]];
+        [self runAction:[CCAnimate actionWithAnimation:[self reverseAnimationWithFrames:10 to:1] restoreOriginalFrame:NO]];
         // The following line removes the sprite when tapped.
-        [self removeChildByTag:6 cleanup:YES];
+//        [self removeChildByTag:6 cleanup:YES];
         isUp = NO;
     }
 }

@@ -19,8 +19,8 @@
 
 -(void)wasTapped;
 -(BOOL)getIsUp;
-
-
+-(CCAnimation *)getAnimationWithFrames: (int)from to:(int)to;
+-(CCAnimation *)reverseAnimationWithFrames: (int)from to:(int)to;
 -(void)startWithType: (NSString *)t;
 -(void)stop;
 -(void)stopEarly;

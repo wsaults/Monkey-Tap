@@ -11,7 +11,7 @@
 #define kHighScoreKey @"com.utvca.monkeytap.coins"
 #define kDidRate @"ratedthegame"
 
-#define SKIN @"default"
+#define SKIN @"a"
 
 typedef enum {
     OBJECTA = 0,

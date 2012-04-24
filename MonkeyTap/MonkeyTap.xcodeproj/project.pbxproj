@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE00F94F1546250000571F66 /* Ball-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = BE00F94D1546250000571F66 /* Ball-hd.png */; };
+		BE00F9501546250000571F66 /* Ball.png in Resources */ = {isa = PBXBuildFile; fileRef = BE00F94E1546250000571F66 /* Ball.png */; };
+		BE00F9531546250500571F66 /* BallWhite-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = BE00F9511546250500571F66 /* BallWhite-hd.png */; };
+		BE00F9541546250500571F66 /* BallWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = BE00F9521546250500571F66 /* BallWhite.png */; };
+		BE00F96D154639AB00571F66 /* a-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE00F969154639AB00571F66 /* a-hd.plist */; };
+		BE00F96E154639AB00571F66 /* a-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = BE00F96A154639AB00571F66 /* a-hd.png */; };
+		BE00F96F154639AB00571F66 /* a.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE00F96B154639AB00571F66 /* a.plist */; };
+		BE00F970154639AB00571F66 /* a.png in Resources */ = {isa = PBXBuildFile; fileRef = BE00F96C154639AB00571F66 /* a.png */; };
 		BE023149153F303400ED90BF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE023148153F303400ED90BF /* QuartzCore.framework */; };
 		BE02314B153F303400ED90BF /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE02314A153F303400ED90BF /* OpenGLES.framework */; };
 		BE02314D153F303400ED90BF /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE02314C153F303400ED90BF /* OpenAL.framework */; };
@@ -128,12 +136,10 @@
 		BE1C8C251544C56E00E3A22B /* button_big-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1C8C211544C56E00E3A22B /* button_big-hd.png */; };
 		BE1C8C261544C56E00E3A22B /* button_small.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1C8C221544C56E00E3A22B /* button_small.png */; };
 		BE1C8C271544C56E00E3A22B /* button_small-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1C8C231544C56E00E3A22B /* button_small-hd.png */; };
-		BE1C8C2A1544C66C00E3A22B /* Ball.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1C8C281544C66C00E3A22B /* Ball.png */; };
-		BE1C8C2B1544C66C00E3A22B /* Ball-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1C8C291544C66C00E3A22B /* Ball-hd.png */; };
 		BE1C8C2E1544C75900E3A22B /* GameObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1C8C2D1544C75800E3A22B /* GameObjects.m */; };
 		BE1C8C2F1544CAF900E3A22B /* SF_Cartoonist_Hand_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE1C8C1F1544C55B00E3A22B /* SF_Cartoonist_Hand_Bold.ttf */; };
-		BE1C8C321544E8CB00E3A22B /* BallWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1C8C301544E8CB00E3A22B /* BallWhite.png */; };
-		BE1C8C331544E8CB00E3A22B /* BallWhite-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1C8C311544E8CB00E3A22B /* BallWhite-hd.png */; };
+		BE92CC141545D0630021A2E9 /* monkey_bg-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = BE92CC121545D0630021A2E9 /* monkey_bg-hd.png */; };
+		BE92CC151545D0630021A2E9 /* monkey_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BE92CC131545D0630021A2E9 /* monkey_bg.png */; };
 		BEB6CE9015459C5F0032097E /* bg-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = BEB6CE8E15459C5F0032097E /* bg-hd.png */; };
 		BEB6CE9115459C5F0032097E /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BEB6CE8F15459C5F0032097E /* bg.png */; };
 		BEFCB9191544BDC3007D2E11 /* MainMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFCB9151544B9B0007D2E11 /* MainMenu.m */; };
@@ -156,6 +162,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE00F94D1546250000571F66 /* Ball-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ball-hd.png"; sourceTree = "<group>"; };
+		BE00F94E1546250000571F66 /* Ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ball.png; sourceTree = "<group>"; };
+		BE00F9511546250500571F66 /* BallWhite-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BallWhite-hd.png"; sourceTree = "<group>"; };
+		BE00F9521546250500571F66 /* BallWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BallWhite.png; sourceTree = "<group>"; };
+		BE00F969154639AB00571F66 /* a-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "a-hd.plist"; sourceTree = "<group>"; };
+		BE00F96A154639AB00571F66 /* a-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "a-hd.png"; sourceTree = "<group>"; };
+		BE00F96B154639AB00571F66 /* a.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = a.plist; sourceTree = "<group>"; };
+		BE00F96C154639AB00571F66 /* a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = a.png; sourceTree = "<group>"; };
 		BE023144153F303400ED90BF /* MonkeyTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonkeyTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE023148153F303400ED90BF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BE02314A153F303400ED90BF /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -398,12 +412,10 @@
 		BE1C8C211544C56E00E3A22B /* button_big-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_big-hd.png"; sourceTree = "<group>"; };
 		BE1C8C221544C56E00E3A22B /* button_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_small.png; sourceTree = "<group>"; };
 		BE1C8C231544C56E00E3A22B /* button_small-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_small-hd.png"; sourceTree = "<group>"; };
-		BE1C8C281544C66C00E3A22B /* Ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ball.png; sourceTree = "<group>"; };
-		BE1C8C291544C66C00E3A22B /* Ball-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ball-hd.png"; sourceTree = "<group>"; };
 		BE1C8C2C1544C75800E3A22B /* GameObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObjects.h; sourceTree = "<group>"; };
 		BE1C8C2D1544C75800E3A22B /* GameObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameObjects.m; sourceTree = "<group>"; };
-		BE1C8C301544E8CB00E3A22B /* BallWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BallWhite.png; sourceTree = "<group>"; };
-		BE1C8C311544E8CB00E3A22B /* BallWhite-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BallWhite-hd.png"; sourceTree = "<group>"; };
+		BE92CC121545D0630021A2E9 /* monkey_bg-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monkey_bg-hd.png"; sourceTree = "<group>"; };
+		BE92CC131545D0630021A2E9 /* monkey_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monkey_bg.png; sourceTree = "<group>"; };
 		BEB6CE8E15459C5F0032097E /* bg-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-hd.png"; sourceTree = "<group>"; };
 		BEB6CE8F15459C5F0032097E /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 		BEFCB90A1544B994007D2E11 /* GKWizard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKWizard.h; sourceTree = "<group>"; };
@@ -882,12 +894,18 @@
 		BE1C8C1A1544C54A00E3A22B /* images */ = {
 			isa = PBXGroup;
 			children = (
+				BE00F969154639AB00571F66 /* a-hd.plist */,
+				BE00F96A154639AB00571F66 /* a-hd.png */,
+				BE00F96B154639AB00571F66 /* a.plist */,
+				BE00F96C154639AB00571F66 /* a.png */,
+				BE00F9511546250500571F66 /* BallWhite-hd.png */,
+				BE00F9521546250500571F66 /* BallWhite.png */,
+				BE00F94D1546250000571F66 /* Ball-hd.png */,
+				BE00F94E1546250000571F66 /* Ball.png */,
+				BE92CC121545D0630021A2E9 /* monkey_bg-hd.png */,
+				BE92CC131545D0630021A2E9 /* monkey_bg.png */,
 				BEB6CE8E15459C5F0032097E /* bg-hd.png */,
 				BEB6CE8F15459C5F0032097E /* bg.png */,
-				BE1C8C281544C66C00E3A22B /* Ball.png */,
-				BE1C8C291544C66C00E3A22B /* Ball-hd.png */,
-				BE1C8C301544E8CB00E3A22B /* BallWhite.png */,
-				BE1C8C311544E8CB00E3A22B /* BallWhite-hd.png */,
 				BE1C8C201544C56E00E3A22B /* button_big.png */,
 				BE1C8C211544C56E00E3A22B /* button_big-hd.png */,
 				BE1C8C221544C56E00E3A22B /* button_small.png */,
@@ -963,13 +981,19 @@
 				BE1C8C251544C56E00E3A22B /* button_big-hd.png in Resources */,
 				BE1C8C261544C56E00E3A22B /* button_small.png in Resources */,
 				BE1C8C271544C56E00E3A22B /* button_small-hd.png in Resources */,
-				BE1C8C2A1544C66C00E3A22B /* Ball.png in Resources */,
-				BE1C8C2B1544C66C00E3A22B /* Ball-hd.png in Resources */,
 				BE1C8C2F1544CAF900E3A22B /* SF_Cartoonist_Hand_Bold.ttf in Resources */,
-				BE1C8C321544E8CB00E3A22B /* BallWhite.png in Resources */,
-				BE1C8C331544E8CB00E3A22B /* BallWhite-hd.png in Resources */,
 				BEB6CE9015459C5F0032097E /* bg-hd.png in Resources */,
 				BEB6CE9115459C5F0032097E /* bg.png in Resources */,
+				BE92CC141545D0630021A2E9 /* monkey_bg-hd.png in Resources */,
+				BE92CC151545D0630021A2E9 /* monkey_bg.png in Resources */,
+				BE00F94F1546250000571F66 /* Ball-hd.png in Resources */,
+				BE00F9501546250000571F66 /* Ball.png in Resources */,
+				BE00F9531546250500571F66 /* BallWhite-hd.png in Resources */,
+				BE00F9541546250500571F66 /* BallWhite.png in Resources */,
+				BE00F96D154639AB00571F66 /* a-hd.plist in Resources */,
+				BE00F96E154639AB00571F66 /* a-hd.png in Resources */,
+				BE00F96F154639AB00571F66 /* a.plist in Resources */,
+				BE00F970154639AB00571F66 /* a.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1129,6 +1153,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1147,6 +1172,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1155,6 +1181,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MonkeyTap/Prefix.pch;
@@ -1172,6 +1199,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
