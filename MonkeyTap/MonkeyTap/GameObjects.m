@@ -18,7 +18,7 @@
 {
     self = [super init];
     if (self) {
-        upTime = 2.0f;
+        upTime = 2.5f;
         type = OBJECT_TYPE_A;
         delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     }
@@ -84,11 +84,20 @@
 {
     isUp = NO;
     
-    if (didMiss) {
-//        [self removeChildByTag:6 cleanup:YES];
-        [(Game *)self.parent missedObject];
+    if ([type isEqualToString:OBJECT_TYPE_A]) {
+        if (didMiss) {
+            [(Game *)self.parent missedObject];
+        }
+    } else if ([type isEqualToString:OBJECT_TYPE_B]){
+    } else {
+        
     }
     
+}
+
+-(void)doNothing
+{
+    // Don't do anything
 }
 
 -(void)stopEarly
@@ -105,9 +114,9 @@
 {
     // The following line removes the sprite when missed.
     [self runAction:[CCSequence actions:
-                     [CCAnimate actionWithAnimation:[self reverseAnimationWithFrames:10 to:0] restoreOriginalFrame:NO],
-                     [CCCallFunc actionWithTarget:self selector:@selector(reset)],
-                     nil]];
+                    [CCAnimate actionWithAnimation:[self reverseAnimationWithFrames:10 to:0] restoreOriginalFrame:NO],
+                    [CCCallFunc actionWithTarget:self selector:@selector(reset)],
+                    nil]];
 }
 
 -(BOOL)getIsUp
@@ -119,6 +128,13 @@
 {
     if (isUp) {
         [self stopAllActions];
+        
+        if ([type isEqualToString:OBJECT_TYPE_B]){
+            [self runAction:[CCAnimate actionWithAnimation:[self getAnimationWithFrames:11 to:21] restoreOriginalFrame:NO]];
+            isUp = NO;
+            return;
+        }
+        
         
         if (c <= 29) {
             // Set multiplyer image to +10

@@ -55,6 +55,9 @@ enum GameStatePP {
 -(void)showObject;
 -(int)getObjectsUp;
 -(void)missedObject;
+-(void)deductPoints;
+-(void)resetCount;
+-(void)setScore:(int)i;
 -(NSArray *)getUpObjects;
 -(NSArray *)getDownObjects;
 -(void)chooseWhichObjectToMake;

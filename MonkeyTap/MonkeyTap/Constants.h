@@ -11,8 +11,10 @@
 
 // in-game stuff
 #define OBJECT_TYPE_A @"monkey"
-#define OBJECT_TYPE_B @"b"
-#define OBJECT_TYPE_C @"c"
+#define OBJECT_TYPE_B @"p_bomb"
+#define OBJECT_TYPE_C @"l_bomb"
+#define OBJECT_TYPE_D @"banana"
+#define OBJECT_TYPE_E @"clock"
 
 #define kTimesPlayed @"com.utvca.monkeytap.timesplayed"
 #define kHighScoreKey @"com.utvca.monkeytap.coins"

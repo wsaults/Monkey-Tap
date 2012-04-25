@@ -55,22 +55,21 @@
     [[CCDirector sharedDirector] resume];
     s = [[CCDirector sharedDirector] winSize];
     
-    // Add sounds here:
-    
+    //Shared frame cache
     NSString *fileName = [NSString stringWithFormat:@"%@.plist", [delegate getCurrentSkin]];
-    
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:fileName];
-
+    
+    // Add sounds here:
     
     objects = [[CCArray alloc] init];
     
-    float hPad = 0;
-    float vPad = 40;
+    float hPad = 25;
+    float vPad = 30;
     
     for (int i = 1; i <= 5; i++) {
         for (int j = 1; j <= 4; j++) {
             GameObjects *m = [GameObjects spriteWithFile:@"BallWhite.png"];
-            m.position = ccp(j * (m.contentSize.width + 5) + hPad, i * (m.contentSize.height + 10)+ vPad);
+            m.position = ccp(j * (m.contentSize.width + 10) + hPad, i * (m.contentSize.height + 15)+ vPad);
             [objects addObject:m];
             [self addChild:m z:1];
         }
@@ -108,7 +107,33 @@
     if ([self getObjectsUp] >= objectsAtOnce) {
         return;
     }
-    nextObjectType = @"monkey";
+    
+    int k = 0;
+    
+    // If score is greater than 200
+    
+    if (CCRANDOM_0_1() < .1 && score > 50) {
+        // have a random chance for OBJECT_TYPE_B (p_bomb)
+        k = 2;
+    }
+    
+    switch (k) {
+            
+        case 2:
+            // Point bomb
+            nextObjectType = OBJECT_TYPE_B;
+            break;
+            
+        case 3:
+            // Life bomb
+            nextObjectType = OBJECT_TYPE_C;
+            break;
+            
+        default:
+            // Monkey
+            nextObjectType = OBJECT_TYPE_A;
+            break;
+    }
     
     [self showObject];
 }
@@ -126,7 +151,7 @@
             timeElapsed = 0;
         }
         if (increaseElapsed >= increaseObjectsAtTime) {
-            int maxObjectsAtOnce = 18;
+            int maxObjectsAtOnce = 12;
             if (objectsAtOnce < maxObjectsAtOnce) {
                 objectsAtOnce++;
                 float minObjectTime = .1f;
@@ -182,12 +207,32 @@
     
     // Play sound
     
-    count = 0;
-    // Set multiplyer image to X1
+    [self resetCount];
     
     for (GameObjects *object in [self getUpObjects]) {
         [object stopEarly];
     }
+}
+
+-(void)deductPoints
+{
+    // Point bomb was tapped
+    if (score >= 50) {
+        [self setScore:-50];
+        [self resetCount];
+    }
+}
+
+-(void)resetCount
+{
+    count = 0;
+    // Set multiplyer image to X1
+}
+
+-(void)setScore:(int)i
+{
+    score += i;
+    [scoreLabel setString:[NSString stringWithFormat:@"Coins:%d",score]];
 }
 
 
@@ -207,10 +252,14 @@
                 }
                 
                 bool monkeyWasWhacked = ([[object getType] isEqualToString:OBJECT_TYPE_A]);
+                bool p_bombWasWhacked = ([[object getType] isEqualToString:OBJECT_TYPE_B]);
                 if (monkeyWasWhacked) {
                     [object wasTapped:count];
                     [self didScore];
                     // Play a sound here... eg. splat!
+                } else if (p_bombWasWhacked) {
+                    [object wasTapped:count];
+                    [self deductPoints];
                 }
             }
         }
@@ -231,22 +280,22 @@
 //    CCLOG(@"Count: %d", count);
     if (count <= 29) {
         // Set multiplyer image to X1
-        score+=10;
+        [self setScore:10];
     } else if (count >= 30 && count <= 59) {
         // Set multiplyer image to X2
-        score+=20;
+        [self setScore:20];
     } else if (count >= 60 && count <= 89) {
         // Set multiplyer image to X3
-        score+=30;
+        [self setScore:30];
     } else if (count >= 90 && count <= 119) {
         // Set multiplyer image to X4
-        score+=40;
+        [self setScore:40];
     } else if (count >= 120 && count <= 149) {
         // Set multiplyer image to X5
-        score+=50;
+        [self setScore:50];
     } else if (count >= 150) {
         // Set multiplyer image to X6
-        score+=60;
+        [self setScore:60];
     }
     
     // score % 30 = number of units to fill multiplier bar.
@@ -256,8 +305,6 @@
      *      score bar is full number of units = score % 30
      * }
      */
-    
-    [scoreLabel setString:[NSString stringWithFormat:@"Coins:%i",score]];
 }
 
 -(void)gameOver

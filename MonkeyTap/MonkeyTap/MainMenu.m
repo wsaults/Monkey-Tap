@@ -28,7 +28,7 @@
         // Create the HighScore label in the top left corner
         int fSize = 18;
         CCLabelTTF *highScore = [CCLabelTTF 
-                                 labelWithString:[NSString stringWithFormat:@"Coins: %d", [delegate getHighScore]] 
+                                 labelWithString:[NSString stringWithFormat:@"Coins:%d", [delegate getHighScore]] 
                                  fontName:@"CPMono_v07_Bold.otf" 
                                  fontSize:fSize];
         highScore.anchorPoint = ccp(0,1);

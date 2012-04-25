@@ -26,6 +26,7 @@
 -(void)stop;
 -(void)stopEarly;
 -(void)reset;
+-(void)doNothing;
 -(NSString *)getType;
 
 @end
