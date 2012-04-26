@@ -32,5 +32,4 @@
 - (NSString *)getCurrentSkin;
 - (UIViewController *)getViewController;
 
-
 @end

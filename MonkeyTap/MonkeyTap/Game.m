@@ -40,7 +40,7 @@
         
         objectsAtOnce = 4;
         timeBetweenObjects = 0.5f;
-        increaseObjectsAtTime = 10.f;
+        increaseObjectsAtTime = 10.0f;
         
         // Add at end of init
         self.state = kGameStatePlaying;
@@ -55,11 +55,11 @@
     [[CCDirector sharedDirector] resume];
     s = [[CCDirector sharedDirector] winSize];
     
+    // Add sounds here:
+    
     //Shared frame cache
     NSString *fileName = [NSString stringWithFormat:@"%@.plist", [delegate getCurrentSkin]];
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:fileName];
-    
-    // Add sounds here:
     
     objects = [[CCArray alloc] init];
     
@@ -151,11 +151,11 @@
             timeElapsed = 0;
         }
         if (increaseElapsed >= increaseObjectsAtTime) {
-            int maxObjectsAtOnce = 12;
+            int maxObjectsAtOnce = 10;
             if (objectsAtOnce < maxObjectsAtOnce) {
                 objectsAtOnce++;
                 float minObjectTime = .1f;
-                timeBetweenObjects -= (timeBetweenObjects > minObjectTime) ? 0.05f : 0;
+                timeBetweenObjects -= (timeBetweenObjects > minObjectTime) ? 0.03f : 0;
                 increaseObjectsAtTime += 10.0f;
             }
         }
@@ -280,22 +280,22 @@
 //    CCLOG(@"Count: %d", count);
     if (count <= 29) {
         // Set multiplyer image to X1
-        [self setScore:10];
+        [self setScore:1];
     } else if (count >= 30 && count <= 59) {
         // Set multiplyer image to X2
-        [self setScore:20];
+        [self setScore:2];
     } else if (count >= 60 && count <= 89) {
         // Set multiplyer image to X3
-        [self setScore:30];
+        [self setScore:3];
     } else if (count >= 90 && count <= 119) {
         // Set multiplyer image to X4
-        [self setScore:40];
+        [self setScore:4];
     } else if (count >= 120 && count <= 149) {
         // Set multiplyer image to X5
-        [self setScore:50];
+        [self setScore:5];
     } else if (count >= 150) {
         // Set multiplyer image to X6
-        [self setScore:60];
+        [self setScore:6];
     }
     
     // score % 30 = number of units to fill multiplier bar.
