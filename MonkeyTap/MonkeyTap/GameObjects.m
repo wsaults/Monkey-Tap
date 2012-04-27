@@ -54,13 +54,19 @@
     [self stopAllActions];
     isUp = YES;
     
-    if ([type isEqualToString:OBJECT_TYPE_B]) {
+    if ([type isEqualToString:OBJECT_TYPE_B]) {         // point bomb
         instanceUpTime = upTime * 1.25f;
-    }
-    else if ([type isEqualToString:OBJECT_TYPE_A]) {
+        
+    } else if ([type isEqualToString:OBJECT_TYPE_A]) {  // monkey
         instanceUpTime = upTime;
-    }
-    else if ([type isEqualToString:OBJECT_TYPE_C]) {
+        
+    } else if ([type isEqualToString:OBJECT_TYPE_C]) {  // life bomb
+        instanceUpTime = upTime * 1.25f;
+        
+    } else if ([type isEqualToString:OBJECT_TYPE_D]) {  // banana
+        instanceUpTime = upTime * 1.5f;
+        
+    } else if ([type isEqualToString:OBJECT_TYPE_E]) {  // clock
         instanceUpTime = upTime * 1.5f;
     }
     
@@ -129,7 +135,7 @@
     if (isUp) {
         [self stopAllActions];
         
-        if ([type isEqualToString:OBJECT_TYPE_B]){
+        if ([type isEqualToString:OBJECT_TYPE_B] || [type isEqualToString:OBJECT_TYPE_C]){ // if its a bomb
             [self runAction:[CCAnimate actionWithAnimation:[self getAnimationWithFrames:11 to:21] restoreOriginalFrame:NO]];
             isUp = NO;
             return;

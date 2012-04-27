@@ -26,11 +26,11 @@ enum GameStatePP {
     
     AppDelegate *delegate;
     
-    CCArray *objects;
-    CCLabelBMFont *scoreLabel;
+    CCArray *objects, *lives;
+    CCLabelBMFont *scoreLabel, *timeLabel;
     
-    int count, score, numberOfObjects, maxNumberOfObjects, fSize, objectsAtOnce;
-    float timeBetweenObjects, timeElapsed, increaseObjectsAtTime, increaseElapsed, lastObjectHitTime, totalTime;
+    int count, score, numberOfObjects, maxNumberOfObjects, fSize, objectsAtOnce, livesLeft;
+    float timeBetweenObjects, timeElapsed, increaseObjectsAtTime, increaseElapsed, lastObjectHitTime, totalTime, gameTime;
     CGSize s;
     bool isPaused;
     NSString *nextObjectType;
@@ -55,6 +55,7 @@ enum GameStatePP {
 -(void)showObject;
 -(int)getObjectsUp;
 -(void)missedObject;
+-(void)reduceLives;
 -(void)deductPoints;
 -(void)resetCount;
 -(void)setScore:(int)i;

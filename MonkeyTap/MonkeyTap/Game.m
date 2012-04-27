@@ -38,9 +38,11 @@
     self = [super init];
     if (self) {
         
+        livesLeft = 5;
         objectsAtOnce = 4;
         timeBetweenObjects = 0.5f;
         increaseObjectsAtTime = 10.0f;
+        gameTime = 60.0f;
         
         // Add at end of init
         self.state = kGameStatePlaying;
@@ -61,6 +63,7 @@
     NSString *fileName = [NSString stringWithFormat:@"%@.plist", [delegate getCurrentSkin]];
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:fileName];
     
+    lives = [[CCArray alloc] init];
     objects = [[CCArray alloc] init];
     
     float hPad = 25;
@@ -84,6 +87,14 @@
     [self addChild:bg z:-1];
     [CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA4444];
     
+    for (int i = 0; i < livesLeft; i++) {
+        CCSprite *l = [CCSprite spriteWithSpriteFrameName:@"banana.png"];
+        l.anchorPoint = ccp(1,1);
+        l.position = ccp(s.width - i * l.contentSize.width, s.height);
+        [lives addObject:l];
+        [self addChild:l z:10];
+    }
+    
     // Create the score label in the top left of the screen
     fSize = 18;
     scoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Coins:0"] 
@@ -93,6 +104,14 @@
     scoreLabel.anchorPoint = ccp(0,1);
     scoreLabel.position = ccp(1,s.height);
     [self addChild:scoreLabel];
+    
+    timeLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%.02f", gameTime] 
+                                   fontName:@"CPMono_v07_Bold.otf"
+                                   fontSize:fSize];
+    
+    timeLabel.anchorPoint = ccp(.5,1);
+    timeLabel.position = ccp(s.width/2, s.height);
+    [self addChild:timeLabel];
     
     [self startGame];
 }
@@ -115,6 +134,20 @@
     if (CCRANDOM_0_1() < .1 && score > 50) {
         // have a random chance for OBJECT_TYPE_B (p_bomb)
         k = 2;
+    } else if (CCRANDOM_0_1() < .07) {
+        // have a random chance for OBJECT_TYPE_C (l_bomb)
+        k = 3;
+        
+    } else if (CCRANDOM_0_1() < .05 && livesLeft < 3) {
+        // have a random chance for OBJECT_TYPE_D (banana)
+        //k = 4;
+        
+    } else if (gameTime < 45.00f && CCRANDOM_0_1() < .05) {
+        // If there is less than 45 seconds on the clock then
+        // have a randome chance or a clock bonus OBJECT_TYPE_E
+        // k = 5
+    } else {
+        
     }
     
     switch (k) {
@@ -129,6 +162,16 @@
             nextObjectType = OBJECT_TYPE_C;
             break;
             
+        case 4:
+            // Banana
+            nextObjectType = OBJECT_TYPE_D;
+            break;
+            
+        case 5:
+            // Clock
+            nextObjectType = OBJECT_TYPE_E;
+            break;
+            
         default:
             // Monkey
             nextObjectType = OBJECT_TYPE_A;
@@ -141,9 +184,20 @@
 -(void)tick: (ccTime)dt
 {
     if (!isPaused) {
-        // Time remaing = 60 seconds - totalTime
         
         timeElapsed += dt;
+        
+        if (gameTime > 0) {
+            gameTime -= dt;
+        }
+        
+        if (gameTime <= 0) {
+            [timeLabel setVisible:NO];
+            [self gameOver];
+        }
+        
+        [timeLabel setString:[NSString stringWithFormat:@"%.02f",gameTime]];
+        
         increaseElapsed += dt;
         if(timeElapsed >= timeBetweenObjects)
         {
@@ -203,20 +257,34 @@
 }
 -(void)missedObject {
     
-    // What do you want to do when the object vanishes?
-    
-    // Play sound
-    
-    [self resetCount];
+    [self reduceLives];
     
     for (GameObjects *object in [self getUpObjects]) {
         [object stopEarly];
     }
 }
 
+-(void)reduceLives
+{
+    [self resetCount];
+    livesLeft--;
+    // Play sound
+    if([lives count] > 0)
+    {
+        [self removeChild:[lives objectAtIndex:[lives count] - 1] cleanup:YES];
+        [lives removeLastObject];
+    }
+    
+    if(livesLeft <= 0)
+    {
+        [self gameOver];
+    }
+}
+
 -(void)deductPoints
 {
     // Point bomb was tapped
+    
     if (score >= 50) {
         [self setScore:-50];
         [self resetCount];
@@ -253,6 +321,7 @@
                 
                 bool monkeyWasWhacked = ([[object getType] isEqualToString:OBJECT_TYPE_A]);
                 bool p_bombWasWhacked = ([[object getType] isEqualToString:OBJECT_TYPE_B]);
+                bool l_bombWasWhacked = ([[object getType] isEqualToString:OBJECT_TYPE_C]);
                 if (monkeyWasWhacked) {
                     [object wasTapped:count];
                     [self didScore];
@@ -260,6 +329,9 @@
                 } else if (p_bombWasWhacked) {
                     [object wasTapped:count];
                     [self deductPoints];
+                } else if (l_bombWasWhacked) {
+                    [object wasTapped:count];
+                    [self reduceLives];
                 }
             }
         }
@@ -309,7 +381,10 @@
 
 -(void)gameOver
 {
-    // If time reaches 0 then gameOver
+    // If time or life reaches 0 then gameOver
+    CCLOG(@"GAME OVER!");
+    // At game over set the timeLabel to 00.00
+    [timeLabel setString:[NSString stringWithFormat:@"00.00"]];
     
     for (GameObjects *m in objects) {
         [m stopAllActions];
@@ -367,6 +442,7 @@
 
 -(void)onExit
 {
+    [lives release];
     [objects release];
     // Unload sounds here
     [[CCTouchDispatcher sharedDispatcher] removeAllDelegates];
