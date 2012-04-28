@@ -17,8 +17,9 @@
 #define OBJECT_TYPE_E @"clock"
 
 #define kTimesPlayed @"com.utvca.monkeytap.timesplayed"
-#define kHighScoreKey @"com.utvca.monkeytap.coins"
+#define kHighScoreKey @"com.utvca.monkeytap.highScorecoins"
 #define kDidRate @"ratedthegame"
+#define kTotalCoinsKey @"com.utvca.monkeytap.totalCoins"
 
 #define SKIN @"monkey"
 

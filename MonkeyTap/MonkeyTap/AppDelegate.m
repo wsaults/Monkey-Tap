@@ -166,14 +166,31 @@
 
 - (void)finishedWithScore:(double)score
 {
-    if (score > [self getHighScore]) {
-        
+    if (score > 0) {
+        score += [self getTotalCoins];
+        [[NSUserDefaults standardUserDefaults] setInteger:score forKey:kTotalCoinsKey];
     }
+    if (score > [self getHighScore]) {
+        [[NSUserDefaults standardUserDefaults] setInteger:score forKey:kHighScoreKey];
+//        [wiz reportScore:score forLeaderboard:kHighScoreKey];
+    }
+    
+    timesPlayed++;
+    [[NSUserDefaults standardUserDefaults] setInteger:timesPlayed forKey:kTimesPlayed];
+//    if (timesPlayed % 10 == 0 && ![[NSUserDefaults standardUserDefaults] boolForKey:kDidRate]) {
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Like MonkeyTap?" message:@"If you like MonkeyTap, please rate it to show your support." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Rate", nil];
+//        [alert show];
+//    }
 }
 
 - (double)getHighScore
 {
-    return [[NSUserDefaults standardUserDefaults] doubleForKey:kHighScoreKey];
+    return [[NSUserDefaults standardUserDefaults] integerForKey:kHighScoreKey];
+}
+
+- (double)getTotalCoins
+{
+    return [[NSUserDefaults standardUserDefaults] integerForKey:kTotalCoinsKey];
 }
 #pragma mark -------
 

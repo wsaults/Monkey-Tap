@@ -132,6 +132,10 @@
 		BE1C8C271544C56E00E3A22B /* button_small-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1C8C231544C56E00E3A22B /* button_small-hd.png */; };
 		BE1C8C2E1544C75900E3A22B /* GameObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1C8C2D1544C75800E3A22B /* GameObjects.m */; };
 		BE1C8C2F1544CAF900E3A22B /* SF_Cartoonist_Hand_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE1C8C1F1544C55B00E3A22B /* SF_Cartoonist_Hand_Bold.ttf */; };
+		BE36EC07154AEE740098DED2 /* coin.png in Resources */ = {isa = PBXBuildFile; fileRef = BE36EC05154AEE740098DED2 /* coin.png */; };
+		BE36EC08154AEE740098DED2 /* coin-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = BE36EC06154AEE740098DED2 /* coin-hd.png */; };
+		BE36EC18154B25FC0098DED2 /* game_bg-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = BE36EC16154B25FC0098DED2 /* game_bg-hd.png */; };
+		BE36EC19154B25FC0098DED2 /* game_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BE36EC17154B25FC0098DED2 /* game_bg.png */; };
 		BE6E6B5115472C8000599B08 /* Anonymous.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE6E6B5015472C1100599B08 /* Anonymous.ttf */; };
 		BE6E6B5315472D0000599B08 /* CPMono_v07_Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BE6E6B5215472CFE00599B08 /* CPMono_v07_Bold.otf */; };
 		BE6E6B5A15475B5C00599B08 /* BallWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = BE6E6B5815475B5C00599B08 /* BallWhite.png */; };
@@ -410,6 +414,10 @@
 		BE1C8C231544C56E00E3A22B /* button_small-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_small-hd.png"; sourceTree = "<group>"; };
 		BE1C8C2C1544C75800E3A22B /* GameObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObjects.h; sourceTree = "<group>"; };
 		BE1C8C2D1544C75800E3A22B /* GameObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameObjects.m; sourceTree = "<group>"; };
+		BE36EC05154AEE740098DED2 /* coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin.png; sourceTree = "<group>"; };
+		BE36EC06154AEE740098DED2 /* coin-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coin-hd.png"; sourceTree = "<group>"; };
+		BE36EC16154B25FC0098DED2 /* game_bg-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "game_bg-hd.png"; sourceTree = "<group>"; };
+		BE36EC17154B25FC0098DED2 /* game_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game_bg.png; sourceTree = "<group>"; };
 		BE6E6B5015472C1100599B08 /* Anonymous.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Anonymous.ttf; sourceTree = "<group>"; };
 		BE6E6B5215472CFE00599B08 /* CPMono_v07_Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CPMono_v07_Bold.otf; sourceTree = "<group>"; };
 		BE6E6B5815475B5C00599B08 /* BallWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BallWhite.png; sourceTree = "<group>"; };
@@ -559,6 +567,8 @@
 		BE023159153F303400ED90BF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BE36EC05154AEE740098DED2 /* coin.png */,
+				BE36EC06154AEE740098DED2 /* coin-hd.png */,
 				BE6E6B5215472CFE00599B08 /* CPMono_v07_Bold.otf */,
 				BE6E6B5015472C1100599B08 /* Anonymous.ttf */,
 				BE1C8C1F1544C55B00E3A22B /* SF_Cartoonist_Hand_Bold.ttf */,
@@ -900,6 +910,8 @@
 		BE1C8C1A1544C54A00E3A22B /* images */ = {
 			isa = PBXGroup;
 			children = (
+				BE36EC16154B25FC0098DED2 /* game_bg-hd.png */,
+				BE36EC17154B25FC0098DED2 /* game_bg.png */,
 				BE6E6B64154776BB00599B08 /* SpriteSheets */,
 				BE6E6B5815475B5C00599B08 /* BallWhite.png */,
 				BE6E6B5915475B5C00599B08 /* BallWhite-hd.png */,
@@ -1010,6 +1022,10 @@
 				BE89E458154A4D77001A8DE0 /* monkey-hd.png in Resources */,
 				BE89E459154A4D77001A8DE0 /* monkey.plist in Resources */,
 				BE89E45A154A4D77001A8DE0 /* monkey.png in Resources */,
+				BE36EC07154AEE740098DED2 /* coin.png in Resources */,
+				BE36EC08154AEE740098DED2 /* coin-hd.png in Resources */,
+				BE36EC18154B25FC0098DED2 /* game_bg-hd.png in Resources */,
+				BE36EC19154B25FC0098DED2 /* game_bg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

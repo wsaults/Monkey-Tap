@@ -81,7 +81,7 @@
     
     // Set the BG
     [CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGB565];
-    CCSprite *bg = [CCSprite spriteWithFile:[NSString stringWithFormat:@"bg.png"]];
+    CCSprite *bg = [CCSprite spriteWithFile:[NSString stringWithFormat:@"game_bg.png"]];
 //    CCSprite *bg = [CCSprite spriteWithFile:[NSString stringWithFormat:@"%@_bg.png", [delegate getCurrentSkin]]];
     bg.anchorPoint = ccp(0,0);
     [self addChild:bg z:-1];
@@ -90,27 +90,35 @@
     for (int i = 0; i < livesLeft; i++) {
         CCSprite *l = [CCSprite spriteWithSpriteFrameName:@"banana.png"];
         l.anchorPoint = ccp(1,1);
-        l.position = ccp(s.width - i * l.contentSize.width, s.height);
+        l.position = ccp((s.width - i * l.contentSize.width) - l.contentSize.width/5, s.height-l.contentSize.height/4);
         [lives addObject:l];
         [self addChild:l z:10];
     }
     
+    // Coin image
+    CCSprite *coinImg = [CCSprite spriteWithFile:@"coin.png"]; // Use the following line if the coin.png is in the sprite sheet
+//    CCSprite *coinImg = [CCSprite spriteWithSpriteFrameName:@"coin.png"];
+    coinImg.anchorPoint = ccp(0,1);
+    coinImg.position = ccp(1,s.height);
+    coinImg.visible = NO;
+    [self addChild:coinImg];
+    
     // Create the score label in the top left of the screen
-    fSize = 18;
-    scoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Coins:0"] 
+    fSize = 24;
+    scoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"0"] 
                                     fontName:@"CPMono_v07_Bold.otf" 
                                     fontSize:fSize];
     
     scoreLabel.anchorPoint = ccp(0,1);
-    scoreLabel.position = ccp(1,s.height);
+    scoreLabel.position = ccp(1+coinImg.contentSize.width*1.8f,s.height-scoreLabel.contentSize.height/4);
     [self addChild:scoreLabel];
     
-    timeLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%.02f", gameTime] 
+    timeLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%.00f", gameTime] 
                                    fontName:@"CPMono_v07_Bold.otf"
                                    fontSize:fSize];
     
     timeLabel.anchorPoint = ccp(.5,1);
-    timeLabel.position = ccp(s.width/2, s.height);
+    timeLabel.position = ccp(s.width/2+timeLabel.contentSize.width/2.5, s.height-timeLabel.contentSize.height/4);
     [self addChild:timeLabel];
     
     [self startGame];
@@ -196,7 +204,7 @@
             [self gameOver];
         }
         
-        [timeLabel setString:[NSString stringWithFormat:@"%.02f",gameTime]];
+        [timeLabel setString:[NSString stringWithFormat:@"%.00f",gameTime]];
         
         increaseElapsed += dt;
         if(timeElapsed >= timeBetweenObjects)
@@ -300,7 +308,7 @@
 -(void)setScore:(int)i
 {
     score += i;
-    [scoreLabel setString:[NSString stringWithFormat:@"Coins:%d",score]];
+    [scoreLabel setString:[NSString stringWithFormat:@"%d",score]];
 }
 
 
@@ -383,18 +391,17 @@
 {
     // If time or life reaches 0 then gameOver
     CCLOG(@"GAME OVER!");
-    // At game over set the timeLabel to 00.00
-    [timeLabel setString:[NSString stringWithFormat:@"00.00"]];
     
     for (GameObjects *m in objects) {
         [m stopAllActions];
         [m unscheduleAllSelectors];
     }
-    
     [delegate finishedWithScore:score];
     [self unscheduleAllSelectors];
     
+    // Stop BG music
     // Play a sound
+    
     
 //    CCMenuItemSprite *playAgainButton = [CCMenuItemSprite itemFromNormalSprite:[GameButton buttonWithText:@"play again"] selectedSprite:NULL target:self selector:@selector(playAgain)];
 //    CCMenuItemSprite *mainButton = [CCMenuItemSprite itemFromNormalSprite:[GameButton buttonWithText:@"main menu"] selectedSprite:NULL target:self selector:@selector(mainMenu)];

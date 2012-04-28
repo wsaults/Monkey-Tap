@@ -26,6 +26,7 @@
 
 - (void)finishedWithScore:(double)score;
 - (double)getHighScore;
+- (double)getTotalCoins;
 - (void)pause;
 - (void)resume;
 - (BOOL)isGameScene;

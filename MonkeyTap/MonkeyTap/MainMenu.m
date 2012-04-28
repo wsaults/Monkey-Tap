@@ -25,14 +25,25 @@
         [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
         delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         
+        //Shared frame cache
+        NSString *fileName = [NSString stringWithFormat:@"%@.plist", [delegate getCurrentSkin]];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:fileName];
+        
+        // Coin image
+        CCSprite *coinImg = [CCSprite spriteWithFile:@"coin.png"];
+//        CCSprite *coinImg = [CCSprite spriteWithSpriteFrameName:@"coin.png"];
+        coinImg.anchorPoint = ccp(0,1);
+        coinImg.position = ccp(1,s.height);
+        [self addChild:coinImg];
+        
         // Create the HighScore label in the top left corner
         int fSize = 18;
         CCLabelTTF *highScore = [CCLabelTTF 
-                                 labelWithString:[NSString stringWithFormat:@"Coins:%d", [delegate getHighScore]] 
+                                 labelWithString:[NSString stringWithFormat:@":%d", [delegate getTotalCoins]] 
                                  fontName:@"CPMono_v07_Bold.otf" 
                                  fontSize:fSize];
         highScore.anchorPoint = ccp(0,1);
-        highScore.position = ccp(1,s.height);
+        highScore.position = ccp(1+coinImg.contentSize.width,s.height);
         [self addChild:highScore];
         
 #pragma mark - Play
