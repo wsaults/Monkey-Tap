@@ -427,7 +427,34 @@
         return;
     }
     
+    CCSprite *resume = [CCSprite spriteWithFile:@"button_small.png"];
+    CCMenuItemSprite *resumeButton = [CCMenuItemSprite itemFromNormalSprite:resume 
+                                                                selectedSprite:NULL 
+                                                                        target:self 
+                                                                      selector:@selector(resumeGame)];
+    
+    CCSprite *mainMenu = [CCSprite spriteWithFile:@"button_small.png"];
+    CCMenuItemSprite *mainMenuButton = [CCMenuItemSprite itemFromNormalSprite:mainMenu 
+                                                               selectedSprite:NULL 
+                                                                       target:self 
+                                                                     selector:@selector(mainMenu)];
+    
+    CCMenuPopup *menu = [CCMenuPopup menuWithItems:resumeButton,mainMenuButton, nil];
+    [menu alignItemsHorizontallyWithPadding:10];
+    PopUp *pop = [PopUp popUpWithTitle:@"pause..." description:@"" sprite:menu];
+    [self addChild:pop z:1000];
+    
+    pauseButton.visible = NO;
+    
+    for (GameObjects *o in [self getUpObjects]) {
+        [o stopEarly];
+    }
+    
+    
     [self unschedule:@selector(tick:)];
+    
+//    [[SimpleAudioEngine sharedEngine] pauseBackgroundMusic];
+    
     isPaused = YES;
 }
 -(void)resumeGame
