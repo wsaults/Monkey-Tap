@@ -34,17 +34,19 @@
 //        CCSprite *coinImg = [CCSprite spriteWithSpriteFrameName:@"coin.png"];
         coinImg.anchorPoint = ccp(0,1);
         coinImg.position = ccp(1,s.height);
+        coinImg.visible = NO;
         [self addChild:coinImg];
         
         // Create the HighScore label in the top left corner
-        int fSize = 18;
+        int fSize = 24;
         CCLabelTTF *highScore = [CCLabelTTF 
-                                 labelWithString:[NSString stringWithFormat:@":%d", [delegate getTotalCoins]] 
+                                 labelWithString:[NSString stringWithFormat:@"%d", [delegate getTotalCoins]] 
                                  fontName:@"CPMono_v07_Bold.otf" 
                                  fontSize:fSize];
         highScore.anchorPoint = ccp(0,1);
-        highScore.position = ccp(1+coinImg.contentSize.width,s.height);
+        highScore.position = ccp(1+coinImg.contentSize.width*1.8f,s.height-highScore.contentSize.height/4);
         [self addChild:highScore];
+
         
 #pragma mark - Play
         // Play button
@@ -63,7 +65,8 @@
         CCSprite *freeCoinsButtonSprite = [CCSprite spriteWithFile:@"button_small.png"];
         CCMenuItemSprite *freeCoinsButton = [CCMenuItemSprite itemFromNormalSprite:freeCoinsButtonSprite 
                                                                     selectedSprite:NULL
-                                                                            target:self selector:@selector(showFreeCoins)];
+                                                                            target:self 
+                                                                          selector:@selector(showFreeCoins)];
         // Free coins menu
         CCMenu *freeCoinsMenu = [CCMenu menuWithItems:freeCoinsButton, nil];
         freeCoinsMenu.position = ccp(s.width/2, s.height/5.5f);
@@ -101,7 +104,7 @@
         
         // BG
         [CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGB565];
-        CCSprite *bg = [CCSprite spriteWithFile:@"monkey_bg.png"];
+        CCSprite *bg = [CCSprite spriteWithFile:@"mainMenu_bg.png"];
         bg.anchorPoint = ccp(0,0);
         [self addChild:bg z:-1];
         [CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA4444];

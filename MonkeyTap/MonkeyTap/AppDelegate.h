@@ -24,9 +24,9 @@
 @property (nonatomic, retain) UIWindow *window;
 @property (nonatomic, retain) RootViewController *viewController;
 
-- (void)finishedWithScore:(double)score;
-- (double)getHighScore;
-- (double)getTotalCoins;
+- (void)finishedWithScore:(int)score;
+- (int)getHighScore;
+- (int)getTotalCoins;
 - (void)pause;
 - (void)resume;
 - (BOOL)isGameScene;

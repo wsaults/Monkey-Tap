@@ -390,7 +390,6 @@
 -(void)gameOver
 {
     // If time or life reaches 0 then gameOver
-    CCLOG(@"GAME OVER!");
     
     for (GameObjects *m in objects) {
         [m stopAllActions];
@@ -402,13 +401,22 @@
     // Stop BG music
     // Play a sound
     
+    CCSprite *playAgain = [CCSprite spriteWithFile:@"button_small.png"];
+    CCMenuItemSprite *playAgainButton = [CCMenuItemSprite itemFromNormalSprite:playAgain 
+                                                           selectedSprite:NULL 
+                                                                   target:self 
+                                                                 selector:@selector(playAgain)];
     
-//    CCMenuItemSprite *playAgainButton = [CCMenuItemSprite itemFromNormalSprite:[GameButton buttonWithText:@"play again"] selectedSprite:NULL target:self selector:@selector(playAgain)];
-//    CCMenuItemSprite *mainButton = [CCMenuItemSprite itemFromNormalSprite:[GameButton buttonWithText:@"main menu"] selectedSprite:NULL target:self selector:@selector(mainMenu)];
-//    CCMenuPopup *menu = [CCMenuPopup menuWithItems:playAgainButton,mainButton, nil];
-//    [menu alignItemsHorizontallyWithPadding:10];
-//    PopUp *pop = [PopUp popUpWithTitle:@"-game over-" description:@"" sprite:menu];
-//    [self addChild:pop z:1000];
+    CCSprite *mainMenu = [CCSprite spriteWithFile:@"button_small.png"];
+    CCMenuItemSprite *mainMenuButton = [CCMenuItemSprite itemFromNormalSprite:mainMenu 
+                                                                selectedSprite:NULL 
+                                                                        target:self 
+                                                                      selector:@selector(mainMenu)];
+    
+    CCMenuPopup *menu = [CCMenuPopup menuWithItems:playAgainButton,mainMenuButton, nil];
+    [menu alignItemsHorizontallyWithPadding:10];
+    PopUp *pop = [PopUp popUpWithTitle:@"game over..." description:@"" sprite:menu];
+    [self addChild:pop z:1000];
 }
 
 

@@ -164,7 +164,7 @@
 	[[CCDirector sharedDirector] setNextDeltaTimeZero:YES];
 }
 
-- (void)finishedWithScore:(double)score
+- (void)finishedWithScore:(int)score
 {
     if (score > 0) {
         score += [self getTotalCoins];
@@ -183,12 +183,12 @@
 //    }
 }
 
-- (double)getHighScore
+- (int)getHighScore
 {
     return [[NSUserDefaults standardUserDefaults] integerForKey:kHighScoreKey];
 }
 
-- (double)getTotalCoins
+- (int)getTotalCoins
 {
     return [[NSUserDefaults standardUserDefaults] integerForKey:kTotalCoinsKey];
 }

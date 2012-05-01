@@ -144,6 +144,16 @@
 		BE89E458154A4D77001A8DE0 /* monkey-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = BE89E454154A4D77001A8DE0 /* monkey-hd.png */; };
 		BE89E459154A4D77001A8DE0 /* monkey.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE89E455154A4D77001A8DE0 /* monkey.plist */; };
 		BE89E45A154A4D77001A8DE0 /* monkey.png in Resources */ = {isa = PBXBuildFile; fileRef = BE89E456154A4D77001A8DE0 /* monkey.png */; };
+		BE8ED812154F71B500DD2E5B /* mainMenu_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BE8ED810154F71B500DD2E5B /* mainMenu_bg.png */; };
+		BE8ED813154F71B500DD2E5B /* mainMenu_bg-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = BE8ED811154F71B500DD2E5B /* mainMenu_bg-hd.png */; };
+		BE8ED81E154F842300DD2E5B /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8ED81C154F840700DD2E5B /* CoreMedia.framework */; };
+		BE8ED820154F843A00DD2E5B /* libxml2.2.7.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8ED81F154F843A00DD2E5B /* libxml2.2.7.3.dylib */; };
+		BE8ED822154F844A00DD2E5B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8ED821154F844A00DD2E5B /* CFNetwork.framework */; };
+		BE8ED824154F846200DD2E5B /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8ED823154F846200DD2E5B /* AddressBookUI.framework */; };
+		BE8ED826154F847900DD2E5B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8ED825154F847900DD2E5B /* Security.framework */; };
+		BE8ED827154F850E00DD2E5B /* CCMenuPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFCB90D1544B9A0007D2E11 /* CCMenuPopup.m */; };
+		BE8ED828154F895100DD2E5B /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = BE8ED815154F776E00DD2E5B /* menu.png */; };
+		BE8ED829154F895400DD2E5B /* menu-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = BE8ED814154F776E00DD2E5B /* menu-hd.png */; };
 		BE92CC141545D0630021A2E9 /* monkey_bg-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = BE92CC121545D0630021A2E9 /* monkey_bg-hd.png */; };
 		BE92CC151545D0630021A2E9 /* monkey_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BE92CC131545D0630021A2E9 /* monkey_bg.png */; };
 		BEB6CE9015459C5F0032097E /* bg-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = BEB6CE8E15459C5F0032097E /* bg-hd.png */; };
@@ -426,6 +436,15 @@
 		BE89E454154A4D77001A8DE0 /* monkey-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monkey-hd.png"; sourceTree = "<group>"; };
 		BE89E455154A4D77001A8DE0 /* monkey.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = monkey.plist; sourceTree = "<group>"; };
 		BE89E456154A4D77001A8DE0 /* monkey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monkey.png; sourceTree = "<group>"; };
+		BE8ED810154F71B500DD2E5B /* mainMenu_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainMenu_bg.png; sourceTree = "<group>"; };
+		BE8ED811154F71B500DD2E5B /* mainMenu_bg-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mainMenu_bg-hd.png"; sourceTree = "<group>"; };
+		BE8ED814154F776E00DD2E5B /* menu-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-hd.png"; sourceTree = "<group>"; };
+		BE8ED815154F776E00DD2E5B /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		BE8ED81C154F840700DD2E5B /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		BE8ED81F154F843A00DD2E5B /* libxml2.2.7.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.7.3.dylib; path = usr/lib/libxml2.2.7.3.dylib; sourceTree = SDKROOT; };
+		BE8ED821154F844A00DD2E5B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		BE8ED823154F846200DD2E5B /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		BE8ED825154F847900DD2E5B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BE92CC121545D0630021A2E9 /* monkey_bg-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monkey_bg-hd.png"; sourceTree = "<group>"; };
 		BE92CC131545D0630021A2E9 /* monkey_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monkey_bg.png; sourceTree = "<group>"; };
 		BEB6CE8E15459C5F0032097E /* bg-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-hd.png"; sourceTree = "<group>"; };
@@ -462,6 +481,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE023149153F303400ED90BF /* QuartzCore.framework in Frameworks */,
+				BE8ED826154F847900DD2E5B /* Security.framework in Frameworks */,
+				BE8ED824154F846200DD2E5B /* AddressBookUI.framework in Frameworks */,
+				BE8ED822154F844A00DD2E5B /* CFNetwork.framework in Frameworks */,
+				BE8ED820154F843A00DD2E5B /* libxml2.2.7.3.dylib in Frameworks */,
+				BE8ED81E154F842300DD2E5B /* CoreMedia.framework in Frameworks */,
 				BEFCB9361544BF14007D2E11 /* libz.dylib in Frameworks */,
 				BEFCB9341544BF0D007D2E11 /* libsqlite3.dylib in Frameworks */,
 				BEFCB9321544BF04007D2E11 /* MobileCoreServices.framework in Frameworks */,
@@ -474,7 +499,6 @@
 				BEFCB9241544BED6007D2E11 /* AddressBook.framework in Frameworks */,
 				BEFCB9221544BED0007D2E11 /* GameKit.framework in Frameworks */,
 				BEFCB9201544BEC9007D2E11 /* Accelerate.framework in Frameworks */,
-				BE023149153F303400ED90BF /* QuartzCore.framework in Frameworks */,
 				BE02314B153F303400ED90BF /* OpenGLES.framework in Frameworks */,
 				BE02314D153F303400ED90BF /* OpenAL.framework in Frameworks */,
 				BE02314F153F303400ED90BF /* AudioToolbox.framework in Frameworks */,
@@ -510,8 +534,13 @@
 		BE023147153F303400ED90BF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BE8ED81F154F843A00DD2E5B /* libxml2.2.7.3.dylib */,
 				BEFCB9351544BF14007D2E11 /* libz.dylib */,
 				BEFCB9331544BF0D007D2E11 /* libsqlite3.dylib */,
+				BE8ED81C154F840700DD2E5B /* CoreMedia.framework */,
+				BE8ED825154F847900DD2E5B /* Security.framework */,
+				BE8ED823154F846200DD2E5B /* AddressBookUI.framework */,
+				BE8ED821154F844A00DD2E5B /* CFNetwork.framework */,
 				BEFCB9311544BF04007D2E11 /* MobileCoreServices.framework */,
 				BEFCB92F1544BEFE007D2E11 /* iAd.framework */,
 				BEFCB92D1544BEF8007D2E11 /* SystemConfiguration.framework */,
@@ -910,6 +939,10 @@
 		BE1C8C1A1544C54A00E3A22B /* images */ = {
 			isa = PBXGroup;
 			children = (
+				BE8ED814154F776E00DD2E5B /* menu-hd.png */,
+				BE8ED815154F776E00DD2E5B /* menu.png */,
+				BE8ED810154F71B500DD2E5B /* mainMenu_bg.png */,
+				BE8ED811154F71B500DD2E5B /* mainMenu_bg-hd.png */,
 				BE36EC16154B25FC0098DED2 /* game_bg-hd.png */,
 				BE36EC17154B25FC0098DED2 /* game_bg.png */,
 				BE6E6B64154776BB00599B08 /* SpriteSheets */,
@@ -1026,6 +1059,10 @@
 				BE36EC08154AEE740098DED2 /* coin-hd.png in Resources */,
 				BE36EC18154B25FC0098DED2 /* game_bg-hd.png in Resources */,
 				BE36EC19154B25FC0098DED2 /* game_bg.png in Resources */,
+				BE8ED812154F71B500DD2E5B /* mainMenu_bg.png in Resources */,
+				BE8ED813154F71B500DD2E5B /* mainMenu_bg-hd.png in Resources */,
+				BE8ED829154F895400DD2E5B /* menu-hd.png in Resources */,
+				BE8ED828154F895100DD2E5B /* menu.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1037,6 +1074,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEFCB91E1544BE2A007D2E11 /* PopUp.m in Sources */,
+				BE8ED827154F850E00DD2E5B /* CCMenuPopup.m in Sources */,
 				BE023171153F303400ED90BF /* CCAction.m in Sources */,
 				BE023174153F303400ED90BF /* CCActionCamera.m in Sources */,
 				BE023177153F303400ED90BF /* CCActionEase.m in Sources */,
